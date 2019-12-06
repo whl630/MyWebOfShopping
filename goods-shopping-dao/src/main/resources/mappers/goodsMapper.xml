@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.GoodsDao">
+    <insert id="addGood">
+        insert into goods(goodsName, goodsPrice, disPrice, intotal, categoryId, imgurl) values (#{goodsName},#{goodsPrice},#{disPrice},#{intotal},#{categoryId},#{imgurl})
+    </insert>
+    <update id="updateGood">
+        update goods set goodsName = #{goodsName},goodsPrice = #{goodsPrice},disPrice = #{disPrice},intotal = #{intotal},
+        categoryId = #{categoryId},imgurl = #{imgurl} where goodsId = #{goodsId}
+    </update>
+    <delete id="deleteGood">
+        delete from goods where goodsId = #{goodsId}
+    </delete>
+    <select id="getAllGoods" resultType="com.goods.Good">
+        select goodsId,goodsName,goodsPrice,disPrice, intotal, categoryId, imgurl from goods order by goodsId
+    </select>
+    <select id="getAGood" resultType="com.goods.Good">
+        select goodsId,goodsName,goodsPrice,disPrice, intotal, categoryId, imgurl  from goods where goodsId = #{goodsId}
+    </select>
+
+    <select id="getAllGoodsTypes" resultType="com.goods.GoodType">
+        select CategoryId,Category from goodstype order by CategoryId
+    </select>
+
+    <select id="getSomeGoods" resultType="com.goods.Good">
+        select goodsId,goodsName,goodsPrice,disPrice, intotal, categoryId, imgurl from goods where categoryId = #{categoryId}
+    </select>
+
+    <select id="getAllGoodsType" resultType="com.goods.GoodType">
+        select CategoryId,Category from goodstype
+    </select>
+
+    <insert id="addGoodType">
+        insert into goodstype(Category) values(#{Category})
+    </insert>
+</mapper>

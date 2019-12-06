@@ -1,0 +1,20 @@
+package com.dao;
+
+import com.goods.Good;
+import com.goods.GoodType;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
+
+public interface GoodsDao {
+    List<Good> getAllGoods(@Param("pageNum")int pageNum, @Param("pageSize")int pageSize);
+    Good getAGood(int id);
+    int addGood(Good good);
+    int updateGood(Good good);
+    int deleteGood(int id);
+
+    List<GoodType> getAllGoodsTypes(@Param("pageNum")int pageNum, @Param("pageSize")int pageSize);
+    List<GoodType> getAllGoodsType();
+    int addGoodType(GoodType goodType);
+    List<Good> getSomeGoods(int categoryId);
+}
