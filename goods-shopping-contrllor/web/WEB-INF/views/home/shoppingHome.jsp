@@ -30,7 +30,7 @@
         <img src="/static/img/logobig.png"/>
         <input type="text" placeholder="老坛酸菜牛肉面" id="searchtext"/>
         <input type="button" value="搜索" id="searchbutton"/>
-        <img src="/static/img/购物车.jpg" href="#" id="img2">
+        <img src="/static/img/购物车.jpg" id="img2">
     </div>
     <div id="thirdDiv">
         <div class="layui-tab">

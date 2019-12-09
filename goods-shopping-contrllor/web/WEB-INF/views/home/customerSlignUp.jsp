@@ -35,7 +35,8 @@
             <input type="text" name="account" placeholder="账号名" />
             <input type="password" name="password" placeholder="账号密码" />
             <input type="password" name="password2" placeholder="账号重复密码" />
-            <input type="button" name="next" class="next action-button" value="下一步" />
+            <input type="button" name="next" class="next action-button" value="下一步" /><br/>
+            <a href="${root}/login1" style="font-size: 15px">已有账号，去登录 > ></a>
         </fieldset>
         <fieldset>
             <h2 class="fs-title">填写社交账号</h2>
