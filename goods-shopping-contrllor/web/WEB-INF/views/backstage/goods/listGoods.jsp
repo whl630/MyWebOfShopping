@@ -13,18 +13,8 @@
 <div>
     <h1>商品信息</h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="#" class="insert"><i class="fa fa-plus-square-o fa-2x" aria-hidden="true"></i></a>
-    <table class="table table-condensed table-striped table-bordered table-hover" id="listTable">
+    <div id="listDiv">
 
-    </table>
-
-    <div id="page">
-        <a href="${root}/listGoods?pageNum=1&pageSize=1" id="id">首页</a>
-        <a href="${root}/listGoods?pageNum=${good.prePage}">上一页</a>
-        <c:forEach items="${good.navigatepageNums}" var="num">
-            <a href="${root}/listGoods?pageNum=${num}">${num}</a>
-        </c:forEach>
-        <a href="${root}/listGoods?pageNum=${good.nextPage}">下一页</a>
-        <a href="${root}/listGoods?pageNum=${good.pages}">尾页</a><span>&nbsp;&nbsp;共${good.pages}页</span>
     </div>
 </div>
 
@@ -34,7 +24,7 @@
             method:"GET",
             url:"${root}/listGoods"
         }).done(function (res) {
-            $("#listTable").html(res);
+            $("#listDiv").html(res);
         });
     }
     //删除
@@ -69,11 +59,16 @@
                 method: "GET",
                 url: "${root}/insert"
             }).done(function () {
-                alert("准备修改！")
+                alert("准备添加！")
             })
         })
     }
-
+    $(function () {
+        loadTable();
+        getDelete();
+        getInsert();
+        getUpdate();
+    })
 </script>
 </body>
 </html>

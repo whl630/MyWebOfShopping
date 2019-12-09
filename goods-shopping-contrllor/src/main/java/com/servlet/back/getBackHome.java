@@ -55,11 +55,16 @@ public class getBackHome {
     //遍历商品到视图
     @RequestMapping("/listGoods")
     public String listGoods(@RequestParam(defaultValue = "1",required = false,name = "pageNum") int pageNum,
-                               @RequestParam(defaultValue = "8",required = false,name = "pageSize") int pageSize,
+                               @RequestParam(defaultValue = "10",required = false,name = "pageSize") int pageSize,
                                Model model){
         List<Good> lists = customersService.getAllGoods(pageNum,pageSize);
         PageInfo<Good> pageInfo = new PageInfo<>(lists,5);
         model.addAttribute("good",pageInfo);
         return "backstage/goods/getGoods";
+    }
+    //进入主页视图listGoods.jsp
+    @RequestMapping("/listGood")
+    public String listGood(){
+        return "backstage/goods/listGoods";
     }
 }
