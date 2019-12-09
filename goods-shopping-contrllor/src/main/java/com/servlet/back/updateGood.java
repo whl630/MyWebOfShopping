@@ -4,6 +4,7 @@ import com.goods.Good;
 import com.service.GoodsAndCustomersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +21,9 @@ public class updateGood {
     public static final String FILE_DIRECTORY = "C:/Users/looki/Desktop/photo";
     //修改商品信息(通过超链接跳转到修改页面)
     @RequestMapping("/update")
-    public String update(){
+    public String update(@Valid int id, Model model){
+        Good good = customersService.getAGood(id);
+        model.addAttribute("good",good);
         return "backstage/goods/updateGood";
     }
 

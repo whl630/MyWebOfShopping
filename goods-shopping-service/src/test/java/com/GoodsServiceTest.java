@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -43,6 +44,30 @@ public class GoodsServiceTest {
         List<Good> employeeEntities =  service.getSomeGoods(3);
         for (Good good : employeeEntities) {
             System.out.println("-----debug: employeeEntity = " + good.getGoodsName());
+        }
+    }
+    @Test
+    public void insert() {
+        Good good = new Good();
+        BigDecimal b = BigDecimal.valueOf(34);
+        BigDecimal c = BigDecimal.valueOf(31);
+        good.setGoodsName("海带");
+        good.setGoodsPrice(b);
+        good.setDisPrice(c);
+        good.setIntotal(243);
+        good.setCategoryId(1);
+        good.setImgurl("菠菜.jpg");
+        int num = service.addGood(good);
+        if (num > 0){
+            System.out.println("添加成功！");
+        }
+    }
+    @Test
+    public void delete() {
+
+        int num = service.deleteGood(66);
+        if (num > 0){
+            System.out.println("删除成功！");
         }
     }
 }

@@ -4,21 +4,23 @@
 <head>
     <title>商品修改页面</title>
     <link rel="stylesheet" type="text/css" href="static/backgood/goodstyle.css">
+    <script src="/static/js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
         <div id="id">
+            <h2 align="center">商品管理-->修改商品</h2>
             <form enctype="multipart/form-data" action="/insertGood">
                 <div>
-                    商品名：  <input type="text"><br/>
+                    商品名称：  <input type="text" value="${good.goodsName}"><br/>
                 </div>
                 <div>
-                    商品价格： <input type="text"><br/>
+                    商品价格： <input type="text" value="${good.goodsPrice}"><br/>
                 </div>
                 <div>
-                    会员价： <input type="text"><br/>
+                    会员价格： <input type="text" ${good.disPrice}><br/>
                 </div>
                 <div>
-                    库存： <input type="text"><br/>
+                    库存数量： <input type="text" value="${good.intotal}"><br/>
                 </div>
                 <div>
                     商品类型：<select name="categoryId">
@@ -29,13 +31,13 @@
                              </select>
                 </div>
                 <div>
-                    商品图片： <input type="file" name="myfile">
+                    <img src="/static/goodsphotoes/${good.imgurl}">
+                    商品图片： <input type="file" name="myfile" >
                 </div>
                 <div>
-                    <input type="submit">
+                    <input type="修改">
                 </div>
             </form>
         </div>
-
 </body>
 </html>

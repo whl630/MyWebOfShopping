@@ -60,6 +60,6 @@ public class getBackHome {
         List<Good> lists = customersService.getAllGoods(pageNum,pageSize);
         PageInfo<Good> pageInfo = new PageInfo<>(lists,5);
         model.addAttribute("good",pageInfo);
-        return "backstage/goods/listGoods";
+        return "backstage/goods/getGoods";
     }
 }

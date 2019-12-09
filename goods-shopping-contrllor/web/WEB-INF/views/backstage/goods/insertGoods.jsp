@@ -7,18 +7,19 @@
 </head>
 <body>
 <div id="id">
+    <h2 align="center">商品管理-->添加商品</h2>
     <form method="post" action="${root}/insertGood" enctype="multipart/form-data" >
         <div>
-            商品名：  <input type="text" name="goodsName"><br/>
+            商品名称：  <input type="text" name="goodsName"><br/>
         </div>
         <div>
             商品价格： <input type="text" name="goodsPrice"><br/>
         </div>
         <div>
-            会员价： <input type="text" name="disPrice"><br/>
+            会员价格： <input type="text" name="disPrice"><br/>
         </div>
         <div>
-            库存： <input type="text" name="intotal"><br/>
+            库存数量： <input type="text" name="intotal"><br/>
         </div>
         <div>
             商品类型：
