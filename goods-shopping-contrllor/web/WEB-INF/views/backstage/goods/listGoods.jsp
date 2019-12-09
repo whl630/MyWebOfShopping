@@ -68,7 +68,7 @@
         getDelete();
         getInsert();
         getUpdate();
-    })
+    });
 </script>
 </body>
 </html>
