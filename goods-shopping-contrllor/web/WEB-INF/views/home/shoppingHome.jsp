@@ -83,42 +83,7 @@
             $("#fourDiv").html(res)
         });
     }
-    //遍历商品名并分类
-    <%--$("#f2").click(function () {--%>
-    <%--    $.ajax({--%>
-    <%--        url:"${root}/listName",--%>
-    <%--        type:"GET",--%>
-    <%--        data:categoryId = $("#f2").val(),--%>
-    <%--        success:function (data) {--%>
-    <%--            alert("正在查询！");--%>
-    <%--            var str = "";--%>
-    <%--            data.forEach(function(i){--%>
-    <%--                str += "<a>"+i.goodsName+"</a>";--%>
-    <%--            })--%>
-    <%--            $("#d2").append(str);--%>
-    <%--        }--%>
-    <%--    })--%>
-    <%--});--%>
-        $("#f2").click(function () {
-            $.ajax({
-                url:"${root}/listName",
-                method:"GET",
-                data:"categoryId=2"
-            }).done(function (res) {
-                alert("udguheru")
-                $("#d2").html(res)
-            })
-        })
-    $("#f2").click(function () {
-        $.ajax({
-            url:"${root}/listName",
-            method:"GET",
-            data:"categoryId=2"
-        }).done(function (res) {
-            alert("udguheru")
-            $("#d2").html(res)
-        })
-    })
+
     $(function () {
         listGoods();
     })

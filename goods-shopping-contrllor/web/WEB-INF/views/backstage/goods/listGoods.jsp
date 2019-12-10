@@ -8,66 +8,59 @@
     <link rel="stylesheet" type="text/css" href="/static/backsageHome/layout.css">
     <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
     <script src="/static/js/jquery-3.3.1.min.js"></script>
+    <style>
+        #searchtext{
+            margin-left: 15px;
+            margin-top: 30px;
+            width: 320px;
+            height: 45px;
+            float: left;
+            font-size: 20px;
+            border: #FF0000 solid 2px;
+        }
+        #searchbutton{
+            margin-top: 30px;
+            width: 80px;
+            height: 45px;
+            float: left;
+            font-size: 20px;
+            color: white;
+            background-color: red;
+            border: #FF0000 solid 2px;
+        }
+    </style>
 </head>
 <body>
 <div>
     <h1>商品信息</h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="#" class="insert"><i class="fa fa-plus-square-o fa-2x" aria-hidden="true"></i></a>
+    <input type="text" placeholder="请输入关键字进行搜索" id="searchtext"><input type="button" value="查询" id="searchbutton">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a id="insert" href="${root}/insert"><i class="fa fa-plus-square-o fa-4x" aria-hidden="true"></i></a>
     <div id="listDiv">
 
     </div>
 </div>
 
 <script>
+    //查询
     function loadTable() {
         $.ajax({
-            method:"GET",
-            url:"${root}/listGoods"
+            method: "GET",
+            url: "${root}/listGoods"
         }).done(function (res) {
             $("#listDiv").html(res);
-        });
-    }
-    //删除
-    function getDelete(){
-        $(".del").click(function () {
-            jQuery.messager.confirm('提示:','你确认要删除吗?',function(event){
-                if(event){
-                    alert("准备删除！");
-                    $.get("${root}/deleteGood?id=" + $(this).closest("tr").attr("data-id"), function (res) {
-                        e.preventDefault();
-                        loadTable();
-                    });
-                }
-            });
-        })
-    }
-    //修改
-    function getUpdate() {
-        $(".update").click(function () {
-            $.ajax({
-                method: "GET",
-                url: "${root}/update"
-            }).done(function () {
-                alert("准备修改！")
-            })
         })
     }
     //添加
-    function getInsert() {
-        $(".insert").click(function () {
-            $.ajax({
-                method: "GET",
-                url: "${root}/insert"
-            }).done(function () {
-                alert("准备添加！")
-            })
+    function doUpdate(){
+        $.get("${root}/update?id="+$(this).closest("tr").attr("data-id"),function (res) {
+            e.preventDefault();
         })
     }
     $(function () {
         loadTable();
-        getDelete();
-        getInsert();
-        getUpdate();
+
+
     });
 </script>
 </body>

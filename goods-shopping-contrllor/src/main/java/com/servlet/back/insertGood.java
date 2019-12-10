@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
@@ -20,10 +21,11 @@ import java.util.List;
 public class insertGood {
     @Autowired
     private GoodsAndCustomersService customersService;
-    public static final String FILE_DIRECTORY = "C:/Users/looki/Desktop/photo";
+    public static final String FILE_DIRECTORY = "E:/photo";
 
     @PostMapping("/insertGood")
-    public String insert(@Valid Good good,MultipartFile imgurl,BindingResult bindingResult){
+    public String insert(@Valid Good good,BindingResult bindingResult, MultipartFile imgurl){
+        good.setImgurl(String.valueOf(imgurl));
         String filename = imgurl.getOriginalFilename();
         String path = FILE_DIRECTORY + File.separator + filename;
         File file = new File(path);
@@ -33,10 +35,10 @@ public class insertGood {
             e.printStackTrace();
         }
         if (bindingResult.hasErrors()){
-            return "backstage/goods/insertGood";
+            return "backstage/goods/insertGoods";
         }else {
             customersService.addGood(good);
-            return "redirect:backstage/goods/listGoods";
+            return "redirect:/listGood";
         }
     }
     //在添加的页面上的select标签上遍历商品类型

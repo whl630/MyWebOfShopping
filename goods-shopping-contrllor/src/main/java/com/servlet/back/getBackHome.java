@@ -44,7 +44,7 @@ public class getBackHome {
     //遍历商品类型到视图
     @RequestMapping("/getGoodsType")
     public String getGoodsType(@RequestParam(defaultValue = "1",required = false,name = "pageNum") int pageNum,
-                               @RequestParam(defaultValue = "3",required = false,name = "pageSize") int pageSize,
+                               @RequestParam(defaultValue = "4",required = false,name = "pageSize") int pageSize,
                                 Model model){
         List<GoodType> lists = customersService.getAllGoodsType(pageNum,pageSize);
         PageInfo<GoodType> pageInfo = new PageInfo<>(lists,5);

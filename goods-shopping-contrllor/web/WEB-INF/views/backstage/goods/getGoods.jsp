@@ -27,9 +27,9 @@
             <td>${goods.categoryId}</td>
             <td><img src="static/goodsphotoes/${goods.imgurl}" width="40px" height="40px"></td>
             <td>
-                <a href="#" class="del"><i class="fa fa-trash fa-2x" aria-hidden="true" id="delete"></i></a>
+                <a class="del"><i class="fa fa-trash fa-2x" aria-hidden="true" id="delete"></i></a>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="#" class="update"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a>
+                <a href="${root}/update?id=${goods.goodsId}" class="update"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a>
             </td>
         </tr>
     </c:forEach>
@@ -37,12 +37,48 @@
 </table>
 
 <div id="page">
-    <a href="${root}/listGoods?pageNum=1" id="id">首页</a>
-    <a href="${root}/listGoods?pageNum=${good.prePage}">上一页</a>
+    <button value="1" class="my_li" id="id">首页</button>
+    <button value="${good.prePage}" class="my_li">上一页</button>
     <c:forEach items="${good.navigatepageNums}" var="num">
-        <a href="${root}/listGoods?pageNum=${num}">${num}</a>
+        <button value="${num}" class="my_li">${num}</button>
     </c:forEach>
-    <a href="${root}/listGoods?pageNum=${good.nextPage}">下一页</a>
-    <a href="${root}/listGoods?pageNum=${good.pages}">尾页</a><span>&nbsp;&nbsp;共${good.pages}页</span>
+    <button value="${good.nextPage}" class="my_li">下一页</button>
+    <button value="${good.pages}" class="my_li">尾页</button><span>&nbsp;&nbsp;共${good.pages}页</span>
 </div>
+<script>
+    function loadTables() {
+        $.ajax({
+            method: "GET",
+            url: "${root}/listGoods",
+            data: {
+                pageNum:$(this).val()
+            }
+        }).done(function (res) {
+            $("#listDiv").html(res);
+        })
+    }
+    //删除
+    function getDelete(){
+        if (window.confirm("是否确定删除？")){
+            $.ajax({
+                method:"GET",
+                url:"${root}/deleteGood",
+                data:{
+                    goodsId:$(this).closest("tr").attr("data-id")
+                }
+            }).done(function (res) {
+                alert(res)
+                loadTables();
+            })
+        }
+    }
 
+    function getUpdate(){
+
+    }
+
+    $(function() {
+        $("#page").on("click",".my_li",loadTables);
+        $("table").on("click",".del",getDelete).on("click",".update",doUpdate);
+    })
+</script>

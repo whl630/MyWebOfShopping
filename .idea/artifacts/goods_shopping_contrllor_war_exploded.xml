@@ -1,20 +1,34 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="goods-shopping-contrllor:war exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/goods_shopping_contrllor_war_exploded</output-path>
+    <output-path>$PROJECT_DIR$/goods-shopping-contrllor/target/goods-shopping-contrllor-1.0-SNAPSHOT</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>goods-shopping-contrllor</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="goods-shopping-contrllor" />
         </element>
         <element id="directory" name="lib">
+          <element id="archive" name="goods-shopping-service-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="goods-shopping-service" />
+          </element>
+          <element id="archive" name="goods-shopping-dao-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="goods-shopping-dao" />
+          </element>
+          <element id="archive" name="goods-shopping-entity-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="goods-shopping-entity" />
+          </element>
           <element id="library" level="project" name="Maven: org.hibernate.validator:hibernate-validator:6.1.0.Final" />
           <element id="library" level="project" name="Maven: jakarta.validation:jakarta.validation-api:2.0.2" />
           <element id="library" level="project" name="Maven: org.jboss.logging:jboss-logging:3.3.2.Final" />
           <element id="library" level="project" name="Maven: com.fasterxml:classmate:1.3.4" />
           <element id="library" level="project" name="Maven: com.github.pagehelper:pagehelper:5.1.10" />
           <element id="library" level="project" name="Maven: com.github.jsqlparser:jsqlparser:2.0" />
-          <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.4" />
-          <element id="library" level="project" name="Maven: commons-io:commons-io:2.2" />
           <element id="library" level="project" name="Maven: org.slf4j:jcl-over-slf4j:1.7.28" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.28" />
           <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.2.3" />
@@ -37,9 +51,13 @@
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.10.1" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.10.1" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.10.1" />
+          <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.4" />
+          <element id="library" level="project" name="Maven: commons-io:commons-io:2.2" />
         </element>
       </element>
-      <element id="javaee-facet-resources" facet="goods-shopping-contrllor/web/Web2" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/goods-shopping-contrllor/target/goods-shopping-contrllor-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+      </element>
       <element id="javaee-facet-resources" facet="goods-shopping-contrllor/web/Web" />
     </root>
   </artifact>

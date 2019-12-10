@@ -49,14 +49,6 @@ public class GoodsServiceTest {
     @Test
     public void insert() {
         Good good = new Good();
-        BigDecimal b = BigDecimal.valueOf(34);
-        BigDecimal c = BigDecimal.valueOf(31);
-        good.setGoodsName("海带");
-        good.setGoodsPrice(b);
-        good.setDisPrice(c);
-        good.setIntotal(243);
-        good.setCategoryId(1);
-        good.setImgurl("菠菜.jpg");
         int num = service.addGood(good);
         if (num > 0){
             System.out.println("添加成功！");

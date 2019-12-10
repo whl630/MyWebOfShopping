@@ -15,6 +15,7 @@ import java.io.File;
 import java.io.IOException;
 
 @Controller
+
 public class updateGood {
     @Autowired
     private GoodsAndCustomersService customersService;
@@ -35,7 +36,7 @@ public class updateGood {
     }
     //修改
     @RequestMapping("/updateGood")
-    public String updateGood(@Valid Good good, MultipartFile imgurl, BindingResult bindingResult){
+    public String updateGood( Good good, MultipartFile imgurl, BindingResult bindingResult){
         String filename = imgurl.getOriginalFilename();
         String path = FILE_DIRECTORY + File.separator + filename;
         File file = new File(path);
@@ -55,12 +56,12 @@ public class updateGood {
 
     //删除操作
     @RequestMapping("/deleteGood")
-    public String deleteGood(@Valid int goodsId){
+    public String deleteGood(int goodsId){
         int num = customersService.deleteGood(goodsId);
         if (num > 0){
-            return "redirect:backstage/goods/listGoods";
+            return "成功";
         }else {
-            return "error/GoodError";
+            return "失败";
         }
     }
 }

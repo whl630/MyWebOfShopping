@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<c:set var="root" scope="page" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
     <title>商品添加页面</title>
@@ -8,7 +9,7 @@
 <body>
 <div id="id">
     <h2 align="center">商品管理-->添加商品</h2>
-    <form method="post" action="${root}/insertGood" enctype="multipart/form-data" >
+    <form method="POST" action="${root}/insertGood" enctype="multipart/form-data" >
         <div>
             商品名称：  <input type="text" name="goodsName"><br/>
         </div>
@@ -34,9 +35,10 @@
             商品图片： <input type="file" name="imgurl">
         </div>
         <div>
-            <input type="submit" value="SUBMIT">
+            <input type="submit" value="添加">
         </div>
     </form>
+    <a href="/listGood">返回</a>
 </div>
 
 </body>

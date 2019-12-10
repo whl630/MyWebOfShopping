@@ -5,7 +5,7 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>用户注册</title>
     <link rel='stylesheet prefetch' href='static/css/reset.css'>
     <link rel="stylesheet" type="text/css" href="static/css/default.css">
     <link rel="stylesheet" type="text/css" href="static/css/styles.css">
@@ -15,7 +15,7 @@
     <h1 id="myh1">分步式网上商城用户注册表单</h1>
     <div class="htmleaf-links">
         <a class="htmleaf-icon icon-htmleaf-home-outline" href="${root}/list" title="返回购物商城主页" target="_blank"><span> 返回购物商城主页</span></a>
-        <a class="htmleaf-icon icon-htmleaf-arrow-forward-outline" href="http://www.htmleaf.com/css3/ui-design/201509062532.html" title="返回下载页" target="_blank"><span> 返回下载页</span></a>
+        <a class="htmleaf-icon icon-htmleaf-arrow-forward-outline" href="${root}/login1" title=" 已有账号，去登录 > >" target="_blank"><span> 已有账号，去登录 > ></span></a>
     </div>
 </header>
 
@@ -36,7 +36,6 @@
             <input type="password" name="password" placeholder="账号密码" />
             <input type="password" name="password2" placeholder="账号重复密码" />
             <input type="button" name="next" class="next action-button" value="下一步" /><br/>
-            <a href="${root}/login1" style="font-size: 15px">已有账号，去登录 > ></a>
         </fieldset>
         <fieldset>
             <h2 class="fs-title">填写社交账号</h2>

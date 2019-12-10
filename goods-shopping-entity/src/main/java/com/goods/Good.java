@@ -1,17 +1,25 @@
 package com.goods;
 
 import lombok.Data;
+import org.springframework.web.multipart.MultipartFile;
 
-import java.math.BigDecimal;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Data
 public class Good {
     private Integer goodsId;//商品编号
+    @Size(min = 2,max = 18)
     private String goodsName;//商品名
-    private BigDecimal goodsPrice;//商品原价
-    private BigDecimal disPrice;//商品会员价
+    @NotNull
+    private double goodsPrice;//商品原价
+    @NotNull
+    private double disPrice;//商品会员价
+    @NotNull
     private int intotal;//商品库存数量
+    @NotNull
     private int categoryId;//商品类型编号
+    @NotNull
     private String imgurl;//商品图片地址
 
     public Integer getGoodsId() {
@@ -30,19 +38,19 @@ public class Good {
         this.goodsName = goodsName;
     }
 
-    public BigDecimal getGoodsPrice() {
+    public double getGoodsPrice() {
         return goodsPrice;
     }
 
-    public void setGoodsPrice(BigDecimal goodsPrice) {
+    public void setGoodsPrice(double goodsPrice) {
         this.goodsPrice = goodsPrice;
     }
 
-    public BigDecimal getDisPrice() {
+    public double getDisPrice() {
         return disPrice;
     }
 
-    public void setDisPrice(BigDecimal disPrice) {
+    public void setDisPrice(double disPrice) {
         this.disPrice = disPrice;
     }
 

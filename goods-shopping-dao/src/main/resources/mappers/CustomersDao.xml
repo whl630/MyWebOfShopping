@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.customer.CustomersDao">
+    <insert id="insertCustomer">
+        insert into customer(account,password,name,number,adress,member) values (#{account},#{password},#{name},#{number},#{adress},#{member})
+    </insert>
+
+    <update id="updateCustomer">
+        update customer set account = #{account},password = #{password},name = #{name},number = #{number},adress = #{adress},member = #{member}
+        where aid = #{aid}
+    </update>
+
+    <delete id="cencelCustomer">
+        delete from customer where aid = #{aid}
+    </delete>
+
+    <select id="getAllCustomers" resultType="com.customer.CustomersDao">
+        select aid,account,password,name,number,adress,member from customer
+    </select>
+
+    <select id="getAllWithPageCustomers" resultType="com.customer.CustomersDao">
+        select aid,account,password,name,number,adress,member from customer order by aid
+    </select>
+</mapper>
