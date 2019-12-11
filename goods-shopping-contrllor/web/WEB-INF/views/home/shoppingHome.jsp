@@ -104,7 +104,6 @@
             $("#fourDiv").html(res)
         });
     }
-
     $(function () {
         listGoods();
     })
