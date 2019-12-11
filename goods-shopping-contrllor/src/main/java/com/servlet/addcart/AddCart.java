@@ -17,8 +17,7 @@ public class AddCart {
     @Autowired
     private GoodsAndCustomersService goodsAndCustomersService;
     @RequestMapping("/addCart")
-    public ModelAndView getGoodsAddCart(int goodsId, HttpServletRequest req){
-        ModelAndView mav = new ModelAndView();
+    public String getGoodsAddCart(int goodsId, HttpServletRequest req){
         //将此ID的商品添加到购物车。
         HttpSession session = req.getSession();
         //更新保存在cart中的值
@@ -31,7 +30,10 @@ public class AddCart {
         }
         cart.add(good,1);
         session.setAttribute("cart",cart);
-        mav.setViewName("redirect:list");
-        return mav;
+        return "添加";
+    }
+    @RequestMapping("/cartInfo")
+    public String getGoodsAddCart(){
+        return "home/shoppingCart/myShoppingCart";
     }
 }

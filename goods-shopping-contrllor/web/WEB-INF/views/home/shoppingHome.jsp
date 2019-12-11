@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="/static/css/index.css"/>
     <link rel="stylesheet" href="/static/dist/pageSwitch.min.css">
     <link rel="stylesheet" href="/static/css/container.css">
-
+    <link rel="stylesheet" href="/static/css/common.css">
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -26,10 +26,40 @@
             display: ${param.showCart != 1 ? 'none' : 'block'};
         }
     </style>
+    <script>
+        function loadCart() {
+            <%--$(".mycart").load("${root}/cartInfo")--%>
+            $.ajax({
+                method:"GET",
+                url:"${root}/cartInfo"
+            }).done(function (res) {
+                $(".mycart").html(res)
+            }).fail(function () {
+                alert("加载购物车失败！")
+            })
+        }
+
+        $(function () {
+            loadCart();
+            $(".prod_good").click(function (event) {
+                $.ajax({
+                    method: "GET",
+                    url:"${root}/addCart",
+                    data: {
+                        goodsId: $(this).closest("tr").attr("data-id")
+                    }
+                }).done(function () {
+                    loadCart();
+                }).fail(function () {
+                    alert("添加到购物车失败！")
+                });
+                event.preventDefault();
+            });
+        })
+    </script>
 </head>
 <body>
     <div class="mycart">
-        <jsp:include page="shoppingCart/myShoppingCart.jsp"/>
     </div>
 <div class="parentDiv">
     <div class="firstDiv">
@@ -39,7 +69,7 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我的订单&nbsp;</a></li>
             <li class="fore3"><a href="#" id="member">会员管理&nbsp;</a></li>
             <li class="fore4"><a href="#" id="help">帮助</a></li>
-            <li class="fore5"><a href="#" id="displayCart">购物车</a></li>
+            <li class="fore5"><a href="#" id="displayCart">&nbsp;&nbsp; 购物车</a></li>
         </ul>
     </div><br>
     <div class="secondDiv">
@@ -95,6 +125,7 @@
         var display = cart.style.display;
         cart.style.display = display === 'block' ? 'none' : 'block';
     });
+
     //遍历Goods
     function listGoods() {
         $.ajax({

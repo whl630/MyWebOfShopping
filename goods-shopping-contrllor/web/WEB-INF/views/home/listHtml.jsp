@@ -9,7 +9,7 @@
         <img src="static/goodsphotoes/${good.imgurl}"><br/>
         原价：<b>￥${good.goodsPrice}</b>&nbsp;&nbsp;会员价：<b>￥${good.disPrice}</b><br/>
         <a >查看详情</a>
-        <a href="${root}/addCart?goodsId=${good.goodsId}" class="prod_good" data-id="${good.goodsId}">添加到购物车</a>
+        <a href="#" class="prod_good" data-id="${good.goodsId}">添加到购物车</a>
         </div>
     </c:forEach>
 
@@ -41,16 +41,6 @@
         $(".prod_good").click(function () {
             $(".goods").animate_from_to("#cart")
         });
-    })
-    <%--function addCart() {--%>
-    <%--    $.ajax({--%>
-    <%--        method: "GET",--%>
-    <%--        url:"${root}/addCart",--%>
-    <%--        data: {--%>
-    <%--            goodsId: $(this).closest("tr").attr("data-id")--%>
-    <%--        }--%>
-    <%--    }).success(function () {--%>
-    <%--        alert("已添加到购物车！")--%>
-    <%--    })--%>
-    <%--}--%>
+    });
+
 </script>
