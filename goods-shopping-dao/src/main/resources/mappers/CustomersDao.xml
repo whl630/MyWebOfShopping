@@ -4,11 +4,11 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.customer.CustomersDao">
     <insert id="insertCustomer">
-        insert into customer(account,password,name,number,adress,member) values (#{account},#{password},#{name},#{number},#{adress},#{member})
+        insert into customer(account,password,name,fname,number,adress) values (#{account},#{password},#{fname},#{name},#{number},#{adress})
     </insert>
 
     <update id="updateCustomer">
-        update customer set account = #{account},password = #{password},name = #{name},number = #{number},adress = #{adress},member = #{member}
+        update customer set account = #{account},password = #{password},fname = #{fname},name = #{name},number = #{number},adress = #{adress}
         where aid = #{aid}
     </update>
 
@@ -16,11 +16,11 @@
         delete from customer where aid = #{aid}
     </delete>
 
-    <select id="getAllCustomers" resultType="com.customer.CustomersDao">
-        select aid,account,password,name,number,adress,member from customer
+    <select id="getAllCustomers" resultType="com.customer.Customer">
+        select aid,account,password,fname,name,number,adress from customer
     </select>
 
-    <select id="getAllWithPageCustomers" resultType="com.customer.CustomersDao">
-        select aid,account,password,name,number,adress,member from customer order by aid
+    <select id="getAllWithPageCustomers" resultType="com.customer.Customer">
+        select aid,account,password,fname,name,number,adress from customer order by aid
     </select>
 </mapper>

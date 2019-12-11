@@ -32,7 +32,7 @@
             </select>
         </div>
         <div>
-            商品图片： <input type="file" name="imgurl">
+            商品图片： <input type="file" name="photo">
         </div>
         <div>
             <input type="submit" value="添加">

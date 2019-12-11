@@ -6,7 +6,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-@Data
+
 public class Good {
     private Integer goodsId;//商品编号
     @Size(min = 2,max = 18)
@@ -76,5 +76,18 @@ public class Good {
 
     public void setImgurl(String imgurl) {
         this.imgurl = imgurl;
+    }
+
+    @Override
+    public String toString() {
+        return "Good{" +
+                "goodsId=" + goodsId +
+                ", goodsName='" + goodsName + '\'' +
+                ", goodsPrice=" + goodsPrice +
+                ", disPrice=" + disPrice +
+                ", intotal=" + intotal +
+                ", categoryId=" + categoryId +
+                ", imgurl='" + imgurl + '\'' +
+                '}';
     }
 }

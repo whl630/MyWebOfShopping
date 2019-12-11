@@ -17,7 +17,7 @@
 				background-color: #c4e3f3;
 			}
 			#registration{
-				margin-right: 750px;
+				margin-right: 700px;
 			}
 			.firstDiv ul li{
 				color: blue;
@@ -44,11 +44,6 @@
 			.secondDiv img{
 				margin-left:270px;
 				width: 200px;
-				float: left;
-			}
-			#img2{
-				width: 100px;
-				height: 100px;
 				float: left;
 			}
 			#searchtext{
@@ -79,7 +74,7 @@
 				background-color: antiquewhite;
 			}
 			.container{
-				width: 720px;
+				width: 750px;
 			}
 			#fourDiv{
 				width: 100%;
@@ -89,9 +84,8 @@
 				float: left;
 			}
 			.goods{
-				width: 320px;
-				height: 300px;
-				border: 1px solid red;
+				width: 280px;
+				height: 260px;
 				margin-right: 10px;
 				margin-top: 6px;
 				float: left;

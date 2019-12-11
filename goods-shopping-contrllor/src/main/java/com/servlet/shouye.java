@@ -15,14 +15,18 @@ import java.util.List;
 @Controller
 public class shouye {
     @Autowired
-    private GoodsAndCustomersService customersService;
-
+    private GoodsAndCustomersService goodsAndCustomersService;
+    //进入购物主页面
+    @RequestMapping("/list")
+    public String listHome(){
+        return "home/shoppingHome";
+    }
     //遍历商品到视图
     @RequestMapping("/getGoods")
     public String listGoods(@RequestParam(defaultValue = "1",required = false,name = "pageNum") int pageNum,
                             @RequestParam(defaultValue = "15",required = false,name = "pageSize") int pageSize,
                             Model model){
-        List<Good> lists = customersService.getAllGoods(pageNum,pageSize);
+        List<Good> lists = goodsAndCustomersService.getAllGoods(pageNum,pageSize);
         PageInfo<Good> pageInfo = new PageInfo<>(lists,5);
         model.addAttribute("goods",pageInfo);
         return "home/listHtml";
@@ -36,7 +40,7 @@ public class shouye {
 //    }
     @RequestMapping("/listName")
     public String getSomeGoodsName(int categoryId,Model model){
-        List<Good> lists = customersService.getSomeGoods(categoryId);
+        List<Good> lists = goodsAndCustomersService.getSomeGoods(categoryId);
         model.addAttribute("name",lists);
         return "listGoodsName";
     }

@@ -59,8 +59,6 @@
     }
     $(function () {
         loadTable();
-
-
     });
 </script>
 </body>

@@ -18,12 +18,12 @@ import java.io.IOException;
 
 public class updateGood {
     @Autowired
-    private GoodsAndCustomersService customersService;
+    private GoodsAndCustomersService goodsAndCustomersService;
     public static final String FILE_DIRECTORY = "C:/Users/looki/Desktop/photo";
     //修改商品信息(通过超链接跳转到修改页面)
     @RequestMapping("/update")
     public String update(@Valid int id, Model model){
-        Good good = customersService.getAGood(id);
+        Good good = goodsAndCustomersService.getAGood(id);
         model.addAttribute("good",good);
         return "backstage/goods/updateGood";
     }
@@ -31,7 +31,7 @@ public class updateGood {
     //将要修改的数据渲染到网页上
     @ModelAttribute("good")
     public Good getAGood(int goodsId){
-        Good good = customersService.getAGood(goodsId);
+        Good good = goodsAndCustomersService.getAGood(goodsId);
         return good;
     }
     //修改
@@ -48,7 +48,7 @@ public class updateGood {
         if (bindingResult.hasErrors()){
             return "backstage/goods/updateGood";
         }else {
-            customersService.updateGood(good);
+            goodsAndCustomersService.updateGood(good);
             return "redirect:backstage/goods/listGoods";
         }
     }
@@ -57,7 +57,7 @@ public class updateGood {
     //删除操作
     @RequestMapping("/deleteGood")
     public String deleteGood(int goodsId){
-        int num = customersService.deleteGood(goodsId);
+        int num = goodsAndCustomersService.deleteGood(goodsId);
         if (num > 0){
             return "成功";
         }else {

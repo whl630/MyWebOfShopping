@@ -20,31 +20,28 @@ import java.util.List;
 @Controller
 public class insertGood {
     @Autowired
-    private GoodsAndCustomersService customersService;
-    public static final String FILE_DIRECTORY = "E:/photo";
+    private GoodsAndCustomersService goodsAndCustomersService;
+    public static final String FILE_DIRECTORY = "C:/Users/looki/Desktop/photo";
 
     @PostMapping("/insertGood")
-    public String insert(@Valid Good good,BindingResult bindingResult, MultipartFile imgurl){
-        good.setImgurl(String.valueOf(imgurl));
-        String filename = imgurl.getOriginalFilename();
+    public String insert(@Valid Good good,BindingResult bindingResult, MultipartFile photo){
+        String filename = photo.getOriginalFilename();
         String path = FILE_DIRECTORY + File.separator + filename;
+        good.setImgurl(path);
         File file = new File(path);
         try {
-            imgurl.transferTo(file);
+            photo.transferTo(file);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if (bindingResult.hasErrors()){
-            return "backstage/goods/insertGoods";
-        }else {
-            customersService.addGood(good);
+            goodsAndCustomersService.addGood(good);
             return "redirect:/listGood";
-        }
+
     }
     //在添加的页面上的select标签上遍历商品类型
     @ModelAttribute("type")
     public List<GoodType> getType(){
-        List<GoodType> lists = customersService.getGoodsType();
+        List<GoodType> lists = goodsAndCustomersService.getGoodsType();
         return lists;
     }
 

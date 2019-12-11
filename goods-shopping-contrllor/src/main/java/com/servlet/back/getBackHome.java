@@ -16,7 +16,7 @@ import java.util.List;
 @Controller
 public class getBackHome {
     @Autowired
-    private GoodsAndCustomersService customersService;
+    private GoodsAndCustomersService goodsAndCustomersService;
 
     //进入操作员的登录界面
     @RequestMapping("/login2")
@@ -46,7 +46,7 @@ public class getBackHome {
     public String getGoodsType(@RequestParam(defaultValue = "1",required = false,name = "pageNum") int pageNum,
                                @RequestParam(defaultValue = "4",required = false,name = "pageSize") int pageSize,
                                 Model model){
-        List<GoodType> lists = customersService.getAllGoodsType(pageNum,pageSize);
+        List<GoodType> lists = goodsAndCustomersService.getAllGoodsType(pageNum,pageSize);
         PageInfo<GoodType> pageInfo = new PageInfo<>(lists,5);
         model.addAttribute("type",pageInfo);
         return "backstage/types/goodsType";
@@ -57,7 +57,7 @@ public class getBackHome {
     public String listGoods(@RequestParam(defaultValue = "1",required = false,name = "pageNum") int pageNum,
                                @RequestParam(defaultValue = "10",required = false,name = "pageSize") int pageSize,
                                Model model){
-        List<Good> lists = customersService.getAllGoods(pageNum,pageSize);
+        List<Good> lists = goodsAndCustomersService.getAllGoods(pageNum,pageSize);
         PageInfo<Good> pageInfo = new PageInfo<>(lists,5);
         model.addAttribute("good",pageInfo);
         return "backstage/goods/getGoods";
