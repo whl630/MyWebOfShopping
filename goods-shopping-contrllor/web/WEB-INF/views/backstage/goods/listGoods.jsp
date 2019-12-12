@@ -51,12 +51,6 @@
             $("#listDiv").html(res);
         })
     }
-    //添加
-    function doUpdate(){
-        $.get("${root}/update?id="+$(this).closest("tr").attr("data-id"),function (res) {
-            e.preventDefault();
-        })
-    }
     $(function () {
         loadTable();
     });

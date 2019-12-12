@@ -9,18 +9,21 @@
 <body>
         <div id="id">
             <h2 align="center">商品管理-->修改商品</h2>
-            <form enctype="multipart/form-data" action="/insertGood">
+            <form enctype="multipart/form-data" action="${root}/updateGood" method="post">
                 <div>
-                    商品名称：  <input type="text" value="${good.goodsName}"><br/>
+                    商品编号：  <input type="text" name="goodsId" value="${g.goodsId}" readonly="readonly"><br/>
                 </div>
                 <div>
-                    商品价格： <input type="text" value="${good.goodsPrice}"><br/>
+                    商品名称：  <input type="text" name="goodsName" value="${g.goodsName}"><br/>
                 </div>
                 <div>
-                    会员价格： <input type="text" ${good.disPrice}><br/>
+                    商品价格： <input type="text" name="goodsPrice" value="${g.goodsPrice}"><br/>
                 </div>
                 <div>
-                    库存数量： <input type="text" value="${good.intotal}"><br/>
+                    会员价格： <input type="text" name="disPrice" value="${g.disPrice}"><br/>
+                </div>
+                <div>
+                    库存数量： <input type="text" name="intotal" value="${g.intotal}"><br/>
                 </div>
                 <div>
                     商品类型：<select name="categoryId">
@@ -30,14 +33,18 @@
                                    </c:forEach>
                              </select>
                 </div>
-                <div>
-                    <img src="/static/goodsphotoes/${good.imgurl}">
-                    商品图片： <input type="file" name="myfile" >
+                <div class="div1">
+                    商品图片： <input type="file" name="photo" >
+                </div>
+                <div class="div2">
+                    <img src="/static/goodsphotoes/${g.imgurl}" width="50px" height="50px">
                 </div>
                 <div>
-                    <input type="修改">
+                    <input  type="submit" value="修改">
                 </div>
             </form>
         </div>
+
+        <a href="/listGood">返回</a>
 </body>
 </html>

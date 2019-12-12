@@ -15,7 +15,7 @@
             <th>商品数量</th>
             <th>操作</th>
         </tr>
-        <c:forEach items="item" varStatus="s" var="${cart}">
+        <c:forEach items="item" varStatus="s" var="${cart.list}">
             <tr>
                 <td>${s.count}</td>
                 <td>${item.good.goodsName}</td>

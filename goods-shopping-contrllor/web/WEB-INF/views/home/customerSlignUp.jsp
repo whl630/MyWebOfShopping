@@ -9,6 +9,7 @@
     <link rel='stylesheet prefetch' href='static/css/reset.css'>
     <link rel="stylesheet" type="text/css" href="static/css/default.css">
     <link rel="stylesheet" type="text/css" href="static/css/styles.css">
+    <script src="/static/js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
 <header class="htmleaf-header">
@@ -26,6 +27,7 @@
         <ul id="progressbar">
             <li class="active">账号设置</li>
             <li>个人详细信息</li>
+            <li>成功</li>
         </ul>
         <!-- fieldsets -->
         <fieldset>
@@ -44,6 +46,11 @@
             <input type="text" name="number" placeholder="电话号码" /><span>${number}</span>
             <textarea name="adress" placeholder="家庭住址"></textarea><span>${adress}</span>
             <input type="button" name="previous" class="previous action-button" value="上一步" />
+            <input type="button" name="next" class="next action-button" value="下一步" /><br/>
+        </fieldset>
+        <fieldset>
+            <h2>点击进行提交</h2>
+            <input type="button" name="previous" class="previous action-button" value="上一步" />
             <input type="submit" name="submit" class="submit action-button" value="提交" />
         </fieldset>
     </form>
@@ -53,13 +60,23 @@
 <script src="static/js/jquery.easing.min.js" type="text/javascript"></script>
 <script src="static/js/style.js" type="text/javascript"></script>
 <script>
+    function doSubmit(){
+        var fname = $(".pwd1").val();
+        var name = $(".pwd2").val();
+        if (fname == name){
+            $("#msform").submit();
+        }
+    }
+
+    $(function () {
         $(".submit").click(function () {
-            var fname = $(".pwd1").val();
-            var name = $(".pwd2").val();
-            if (fname == name){
-                $("#msform").submit();
-            }
+            doSubmit();
+        });
+        $("form").submit(function (e) {
+            // console.dirxml(form)
+            alert("正在提交！")
         })
+    });
 </script>
 </body>
 </html>

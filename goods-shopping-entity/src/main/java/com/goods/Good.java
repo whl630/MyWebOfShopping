@@ -78,6 +78,19 @@ public class Good {
         this.imgurl = imgurl;
     }
 
+    public Good(Integer goodsId, @Size(min = 2, max = 18) String goodsName, @NotNull double goodsPrice, @NotNull double disPrice, @NotNull int intotal, @NotNull int categoryId, @NotNull String imgurl) {
+        this.goodsId = goodsId;
+        this.goodsName = goodsName;
+        this.goodsPrice = goodsPrice;
+        this.disPrice = disPrice;
+        this.intotal = intotal;
+        this.categoryId = categoryId;
+        this.imgurl = imgurl;
+    }
+
+    public Good() {
+    }
+
     @Override
     public String toString() {
         return "Good{" +

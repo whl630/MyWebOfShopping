@@ -41,20 +41,6 @@
 
         $(function () {
             loadCart();
-            $(".prod_good").click(function (event) {
-                $.ajax({
-                    method: "GET",
-                    url:"${root}/addCart",
-                    data: {
-                        goodsId: $(this).closest("tr").attr("data-id")
-                    }
-                }).done(function () {
-                    loadCart();
-                }).fail(function () {
-                    alert("添加到购物车失败！")
-                });
-                event.preventDefault();
-            });
         })
     </script>
 </head>
@@ -87,7 +73,8 @@
                 <li id="f5" value="5">生活用品</li>
                 <li id="f6" value="6">书籍</li>
                 <li id="f7" value="7">饮品</li>
-                <li id="f8" value="8">其他</li>
+                <li id="f8" value="8">服装</li>
+                <li id="f9" value="9">其他</li>
             </ul>
             <div class="layui-tab-content">
                 <div class="layui-tab-item layui-show" id="d1">
@@ -100,6 +87,7 @@
                 <div class="layui-tab-item" id="d6">内容5</div>
                 <div class="layui-tab-item" id="d7">内容6</div>
                 <div class="layui-tab-item" id="d8">内容7</div>
+                <div class="layui-tab-item" id="d9">内容8</div>
             </div>
         </div>
     </div>
@@ -138,6 +126,7 @@
     $(function () {
         listGoods();
     })
+
 </script>
 <link href="/static/js/bootstrap.min.css" type="text/css" rel="stylesheet">
 <script src="/static/js/jquery-1.11.0.min.js" type="text/javascript"></script>

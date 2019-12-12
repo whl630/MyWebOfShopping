@@ -18,7 +18,7 @@ public class CustomerText {
 
     @Test
     public void insertCustomer(){
-        Customer customer = new Customer("abc123","123456","lisi","李四","232345678","珠海");
+        Customer customer = new Customer("whl234","123456","wangwu","王五","123456789","南昌");
         int num = customersAndLoginService.insertCustomer(customer);
         if (num > 0){
             System.out.println("添加成功！");

@@ -18,8 +18,15 @@ public class getModelAndView {
     private CustomersAndLoginService customersAndLoginService;
     //进入用户的登录界面(CSS3动态背景登录页面)
     @RequestMapping("/login1")
-    public ModelAndView login(){
+    public ModelAndView login(@Valid Customer customer, BindingResult bindingResult){
         ModelAndView modelAndView = new ModelAndView();
+        if(bindingResult.hasErrors()){
+            List<FieldError> errors = bindingResult.getFieldErrors();
+            for(FieldError error:errors){
+                modelAndView.addObject(error.getField(),error.getDefaultMessage() );
+            }
+            modelAndView.setViewName("redirect:slign");
+        }
         modelAndView.setViewName("home/userLogin");
         return modelAndView;
     }
