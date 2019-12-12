@@ -25,11 +25,17 @@
     </select>
 
     <select id="getSomeGoods" resultType="com.goods.Good">
-        select goodsId,goodsName,goodsPrice,disPrice, intotal, categoryId, imgurl from goods where categoryId = #{categoryId}
+        <bind name="pattern" value="'%'+goodsName+'%'"/>
+        select goodsId,goodsName,goodsPrice,disPrice, intotal, categoryId, imgurl from goods
+        where goodsName like #{pattern}
     </select>
 
     <select id="getAllGoodsType" resultType="com.goods.GoodType">
         select CategoryId,Category from goodstype
+    </select>
+
+    <select id="getSomeGoodsByCategoryId" resultType="com.goods.Good">
+        select goodsId,goodsName,goodsPrice,disPrice, intotal, categoryId, imgurl from goods where categoryId = #{categoryId}
     </select>
 
     <insert id="addGoodType">

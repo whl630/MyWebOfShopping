@@ -9,9 +9,10 @@ public interface GoodsAndCustomersService {
     List<Good> getAllGoods(int pagaNum,int pageSize);
     List<GoodType> getAllGoodsType(int pagaNum,int pageSize);
     List<GoodType> getGoodsType();
-    List<Good> getSomeGoods(int categoryId);
+    List<Good> getSomeGoods(String goodsName);
     int addGood(Good good);
     Good getAGood(int goodsId);
     int updateGood(Good good);
     int deleteGood(int goodsId);
+    List<Good> getSomeGoodsByCategoryId(int categoryId);
 }

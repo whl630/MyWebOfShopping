@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -44,7 +45,7 @@ public class getBackHome {
     //遍历商品类型到视图
     @RequestMapping("/getGoodsType")
     public String getGoodsType(@RequestParam(defaultValue = "1",required = false,name = "pageNum") int pageNum,
-                               @RequestParam(defaultValue = "4",required = false,name = "pageSize") int pageSize,
+                               @RequestParam(defaultValue = "5",required = false,name = "pageSize") int pageSize,
                                 Model model){
         List<GoodType> lists = goodsAndCustomersService.getAllGoodsType(pageNum,pageSize);
         PageInfo<GoodType> pageInfo = new PageInfo<>(lists,5);
@@ -55,7 +56,7 @@ public class getBackHome {
     //遍历商品到视图
     @RequestMapping("/listGoods")
     public String listGoods(@RequestParam(defaultValue = "1",required = false,name = "pageNum") int pageNum,
-                               @RequestParam(defaultValue = "10",required = false,name = "pageSize") int pageSize,
+                               @RequestParam(defaultValue = "12",required = false,name = "pageSize") int pageSize,
                                Model model){
         List<Good> lists = goodsAndCustomersService.getAllGoods(pageNum,pageSize);
         PageInfo<Good> pageInfo = new PageInfo<>(lists,5);
@@ -66,5 +67,13 @@ public class getBackHome {
     @RequestMapping("/listGood")
     public String listGood(){
         return "backstage/goods/listGoods";
+    }
+
+    //通过字段名进行模糊查询商品信息
+    @RequestMapping("/getGoodsByGoodsName")
+    @ResponseBody
+    public List<Good> getGoodsByGoodsName(String goodsName){
+        List<Good> goods = goodsAndCustomersService.getSomeGoods(goodsName);
+        return goods;
     }
 }

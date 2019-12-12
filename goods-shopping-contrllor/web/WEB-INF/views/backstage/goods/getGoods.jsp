@@ -15,7 +15,7 @@
         <th>操作</th>
     </tr>
     </thead>
-    <tbody>
+    <tbody id="tbody">
     <c:forEach items="${good.list}" var="goods" varStatus="g">
         <tr data-id="${goods.goodsId}">
             <td><input type="checkbox" id="checkbox"></td>
@@ -73,8 +73,40 @@
         }
     }
 
+    //模糊查询
+    function getGoodsByGoodsName() {
+        $.ajax({
+            method: "GET",
+            url: "${root}/getGoodsByGoodsName",
+            data:{
+                goodsName:$("#searchtext").val()
+            },
+            success:function (data) {
+                console.info("正在查询！");
+                var str = "";
+                data.forEach(function(i){
+                    str += "<tr><td>"+"<input type='checkbox' id='checkbox'>"
+                        +"</td><td>"+i.goodsId
+                        +"</td><td>"+i.goodsName
+                        +"</td><td>"+i.goodsPrice
+                        +"</td><td>"+i.disPrice
+                        +"</td><td>"+i.intotal
+                        +"</td><td>"+i.categoryId
+                        +"</td><td>"+"<img src='static/goodsphotoes/"
+                        +i.imgurl+" 'width='40px' height='40px'> "
+                        +"</td><td>"+"<a class='del'><i class='fa fa-trash fa-2x' aria-hidden='true' id='delete'></i></a>"
+                        +"<a href='${root}/update?goodsId="+i.goodsId+"'class='update'><i class='fa fa-pencil-square-o fa-2x' aria-hidden='true'></i></a>"
+                        +"</td></tr>";
+                })
+                $("#tbody").append(str);
+            }
+        });
+    }
     $(function() {
         $("#page").on("click",".my_li",loadTables);
         $("table").on("click",".del",getDelete);
+        $("#searchbutton").click(function () {
+            getGoodsByGoodsName();
+        })
     })
 </script>

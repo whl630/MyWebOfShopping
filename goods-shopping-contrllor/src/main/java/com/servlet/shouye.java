@@ -40,7 +40,7 @@ public class shouye {
 //    }
     @RequestMapping("/listName")
     public String getSomeGoodsName(int categoryId,Model model){
-        List<Good> lists = goodsAndCustomersService.getSomeGoods(categoryId);
+        List<Good> lists = goodsAndCustomersService.getSomeGoodsByCategoryId(categoryId);
         model.addAttribute("name",lists);
         return "listGoodsName";
     }

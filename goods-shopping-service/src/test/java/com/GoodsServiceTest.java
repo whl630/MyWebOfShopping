@@ -41,7 +41,7 @@ public class GoodsServiceTest {
     }
     @Test
     public void getsomeGoods() {
-        List<Good> employeeEntities =  service.getSomeGoods(3);
+        List<Good> employeeEntities =  service.getSomeGoodsByCategoryId(3);
         for (Good good : employeeEntities) {
             System.out.println("-----debug: employeeEntity = " + good.getGoodsName());
         }
@@ -60,6 +60,14 @@ public class GoodsServiceTest {
         int num = service.deleteGood(66);
         if (num > 0){
             System.out.println("删除成功！");
+        }
+    }
+    @Test
+    public void getSomeGoods() {
+
+        List<Good> goods = service.getSomeGoods("h");
+        for (Good good : goods) {
+            System.out.println(good);
         }
     }
 }

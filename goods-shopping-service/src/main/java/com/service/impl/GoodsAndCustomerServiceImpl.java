@@ -28,9 +28,10 @@ public class GoodsAndCustomerServiceImpl implements GoodsAndCustomersService {
     }
 
     @Override
-    public List<Good> getSomeGoods(int categoryId) {
-        return goodsDao.getSomeGoods(categoryId);
+    public List<Good> getSomeGoods(String goodsName) {
+        return goodsDao.getSomeGoods(goodsName);
     }
+
 
     @Override
     public int addGood(Good good) {
@@ -50,5 +51,10 @@ public class GoodsAndCustomerServiceImpl implements GoodsAndCustomersService {
     @Override
     public int deleteGood(int goodsId) {
         return goodsDao.deleteGood(goodsId);
+    }
+
+    @Override
+    public List<Good> getSomeGoodsByCategoryId(int categoryId) {
+        return goodsDao.getSomeGoodsByCategoryId(categoryId);
     }
 }
