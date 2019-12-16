@@ -6,10 +6,11 @@
     <title>商品类型界面</title>
     <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/static/backsageHome/layout.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
 </head>
 <body>
 <div>
-    <h1>商品类型数据</h1>
+    <h1>商品类型数据</h1><a id="insert" href="${root}/insertType"><i class="fa fa-plus-square-o fa-4x" aria-hidden="true"></i></a>
     <table class="table table-condensed table-striped table-bordered table-hover">
         <thead>
         <tr>

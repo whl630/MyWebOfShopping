@@ -21,10 +21,26 @@ public class shouye {
     public String listHome(){
         return "home/shoppingHome";
     }
+
+
+    @RequestMapping("/list1")
+    public String listHome1(){
+        return "home/shoppingHome1";
+    }
+
+    @RequestMapping("/home")
+    public String listHome2(){
+        return "home/home";
+    }
+
+    @RequestMapping("/listGoodsByPage")
+    public String listGoodsByPage(){
+        return "home/listGood/listGoodsByPage";
+    }
     //遍历商品到视图
     @RequestMapping("/getGoods")
     public String listGoods(@RequestParam(defaultValue = "1",required = false,name = "pageNum") int pageNum,
-                            @RequestParam(defaultValue = "15",required = false,name = "pageSize") int pageSize,
+                            @RequestParam(defaultValue = "18",required = false,name = "pageSize") int pageSize,
                             Model model){
         List<Good> lists = goodsAndCustomersService.getAllGoods(pageNum,pageSize);
         PageInfo<Good> pageInfo = new PageInfo<>(lists,5);

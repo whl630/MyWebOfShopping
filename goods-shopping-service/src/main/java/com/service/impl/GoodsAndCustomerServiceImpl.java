@@ -57,4 +57,9 @@ public class GoodsAndCustomerServiceImpl implements GoodsAndCustomersService {
     public List<Good> getSomeGoodsByCategoryId(int categoryId) {
         return goodsDao.getSomeGoodsByCategoryId(categoryId);
     }
+
+    @Override
+    public int insertGoodsType(GoodType goodType) {
+        return goodsDao.addGoodType(goodType);
+    }
 }

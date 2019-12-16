@@ -4,7 +4,7 @@
 <head>
     <title>商品修改页面</title>
     <link rel="stylesheet" type="text/css" href="static/backgood/goodstyle.css">
-    <script src="/static/js/jquery-3.3.1.min.js"></script>
+    <script src="/static/js/jquery.js"></script>
 </head>
 <body>
         <div id="id">

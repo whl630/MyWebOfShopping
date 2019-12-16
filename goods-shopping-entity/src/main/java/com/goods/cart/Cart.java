@@ -2,6 +2,7 @@ package com.goods.cart;
 
 import com.goods.Good;
 
+import java.text.DecimalFormat;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -39,12 +40,20 @@ public class Cart {
         return num;
     }
 
-    public float getTotalPrice() {
+    public double getTotalPrice() {
         float money = 0;
         for (CartItem c : items.values()) {
 
         }
-        return money;
+        return 30.5;
+    }
+    public double getTotalPrice1 () {
+        double n = 0;
+        String format ="";
+        for (CartItem c : items.values()) {
+
+        }
+        return  765.5;
     }
     public boolean isNothing() {
         return items.isEmpty();

@@ -16,10 +16,10 @@
     </tr>
     </thead>
     <tbody id="tbody">
-    <c:forEach items="${good.list}" var="goods" varStatus="g">
+    <c:forEach items="${good.list}" var="goods">
         <tr data-id="${goods.goodsId}">
             <td><input type="checkbox" id="checkbox"></td>
-            <td>${g.count}</td>
+            <td>${goods.goodsId}</td>
             <td>${goods.goodsName}</td>
             <td>${goods.goodsPrice}</td>
             <td>${goods.disPrice}</td>
@@ -82,10 +82,10 @@
                 goodsName:$("#searchtext").val()
             },
             success:function (data) {
-                console.info("正在查询！");
+                alert("正在查询！");
                 var str = "";
                 data.forEach(function(i){
-                    str += "<tr><td>"+"<input type='checkbox' id='checkbox'>"
+                    str += "<tr data-id='"+i.goodsId+"'><td>"+"<input type='checkbox' id='checkbox'>"
                         +"</td><td>"+i.goodsId
                         +"</td><td>"+i.goodsName
                         +"</td><td>"+i.goodsPrice
@@ -98,7 +98,7 @@
                         +"<a href='${root}/update?goodsId="+i.goodsId+"'class='update'><i class='fa fa-pencil-square-o fa-2x' aria-hidden='true'></i></a>"
                         +"</td></tr>";
                 })
-                $("#tbody").append(str);
+                $("#listDiv").html(str);
             }
         });
     }

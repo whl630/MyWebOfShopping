@@ -42,6 +42,7 @@
         <jackson.version>2.10.1</jackson.version>
         <commons.fileupload.version>1.4</commons.fileupload.version>
         <lombok.version>1.18.10</lombok.version>
+        <javax.servlet>2.5</javax.servlet>
     </properties>
 
     <dependencyManagement>
@@ -180,7 +181,11 @@
                 <version>${lombok.version}</version>
                 <scope>provided</scope>
             </dependency>
-
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>servlet-api</artifactId>
+                <version>${javax.servlet}</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>

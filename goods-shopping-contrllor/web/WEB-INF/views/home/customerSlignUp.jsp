@@ -9,7 +9,7 @@
     <link rel='stylesheet prefetch' href='static/css/reset.css'>
     <link rel="stylesheet" type="text/css" href="static/css/default.css">
     <link rel="stylesheet" type="text/css" href="static/css/styles.css">
-    <script src="/static/js/jquery-3.3.1.min.js"></script>
+    <script src="static/js/jquery-2.1.1.min.js"></script>
 </head>
 <body>
 <header class="htmleaf-header">
@@ -56,7 +56,7 @@
     </form>
 </article>
 
-<script src="static/js/jquery-2.1.1.min.js"></script>
+
 <script src="static/js/jquery.easing.min.js" type="text/javascript"></script>
 <script src="static/js/style.js" type="text/javascript"></script>
 <script>

@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/static/backsageHome/layout.css">
     <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
-    <script src="/static/js/jquery-3.3.1.min.js"></script>
+    <script src="/static/js/jquery.js"></script>
     <style>
         #searchtext{
             margin-left: 15px;

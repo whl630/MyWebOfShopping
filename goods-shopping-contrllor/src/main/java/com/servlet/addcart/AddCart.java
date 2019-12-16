@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 @Controller
+@RequestMapping("/shopping")
 public class AddCart {
     @Autowired
     private GoodsAndCustomersService goodsAndCustomersService;

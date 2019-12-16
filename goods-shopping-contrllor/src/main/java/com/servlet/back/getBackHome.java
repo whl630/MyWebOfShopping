@@ -42,17 +42,6 @@ public class getBackHome {
         return "backstage/details/gooddetailsOperation";
     }
 
-    //遍历商品类型到视图
-    @RequestMapping("/getGoodsType")
-    public String getGoodsType(@RequestParam(defaultValue = "1",required = false,name = "pageNum") int pageNum,
-                               @RequestParam(defaultValue = "5",required = false,name = "pageSize") int pageSize,
-                                Model model){
-        List<GoodType> lists = goodsAndCustomersService.getAllGoodsType(pageNum,pageSize);
-        PageInfo<GoodType> pageInfo = new PageInfo<>(lists,5);
-        model.addAttribute("type",pageInfo);
-        return "backstage/types/goodsType";
-    }
-
     //遍历商品到视图
     @RequestMapping("/listGoods")
     public String listGoods(@RequestParam(defaultValue = "1",required = false,name = "pageNum") int pageNum,
@@ -75,5 +64,11 @@ public class getBackHome {
     public List<Good> getGoodsByGoodsName(String goodsName){
         List<Good> goods = goodsAndCustomersService.getSomeGoods(goodsName);
         return goods;
+    }
+
+    //加载后台直接显示的页面
+    @RequestMapping("/backsageList")
+    public String backsageList(){
+        return "backstage/backsageList";
     }
 }

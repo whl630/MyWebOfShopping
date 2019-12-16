@@ -42,12 +42,6 @@ public class insertGood {
         return "redirect:/listGood";
 
     }
-    //在添加的页面上的select标签上遍历商品类型
-    @ModelAttribute("type")
-    public List<GoodType> getType(){
-        List<GoodType> lists = goodsAndCustomersService.getGoodsType();
-        return lists;
-    }
 
     //添加商品(通过超链接跳转到添加页面)
     @RequestMapping("/insert")

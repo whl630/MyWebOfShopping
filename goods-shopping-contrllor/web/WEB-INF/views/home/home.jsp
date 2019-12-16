@@ -1,0 +1,167 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:set var="root" scope="page" value="${pageContext.request.contextPath}"/>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网上商城首页</title>
+    <link rel="stylesheet" type="text/css" href="http://demo.lanrenzhijia.com/demo/51/5125/demo/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="http://demo.lanrenzhijia.com/demo/51/5125/demo/css/default.css">
+    <link rel="stylesheet" type="text/css" href="/static/home/css/styles.css">
+
+    <link rel="stylesheet" href="/static/home/css/style.css">
+    <link rel="stylesheet" href="/static/dist/pageSwitch.min.css">
+    <link rel="stylesheet" href="/static/css/container.css">
+    <link rel="stylesheet" href="/static/css/common.css">
+    <link rel="stylesheet" href="static/layui-v2.5.4/layui/css/layui.css" type="text/css" media="all">
+    <script src="static/layui-v2.5.4/layui/layui.js" type="text/javascript"></script>
+    <script src="/static/js/jquery.js"></script>
+    <style>
+        .wrapper {
+            width: 705px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        h1.title {
+            display: inline-block;
+            background-color: #333;
+            color: #fff;
+            font-size: 20px;
+            font-weight: normal;
+            text-transform: uppercase;
+            padding: 4px 20px;
+            float: left;
+        }
+        .clear {
+            clear: both;
+        }
+        .items {
+            display: block;
+            margin: 20px 0;
+        }
+        .item {
+            background-color: #fff;
+            float: left;
+            margin: 0 10px 10px 0;
+            width: 205px;
+            padding: 10px;
+            height: 290px;
+        }
+        .item img {
+            display: block;
+            margin: auto;
+        }
+        h2 {
+            font-size: 16px;
+            display: block;
+            border-bottom: 1px solid #ccc;
+            margin: 0 0 10px 0;
+            padding: 0 0 5px 0;
+        }
+        button {
+            border: 1px solid #722A1B;
+            padding: 4px 14px;
+            background-color: #fff;
+            color: #722A1B;
+            text-transform: uppercase;
+            float: right;
+            margin: 5px 0;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        span.car {
+            float: right;
+        }
+        .shopping-cart {
+            display: inline-block;
+            background: url('static/img/购物车.jpg') no-repeat 0 0;
+            width: 24px;
+            height: 24px;
+            margin: 0 10px 0 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="parentDiv">
+        <div id="nav-1">
+            <ul class="nav">
+                <li class="slide1">Visited</li>
+                <li class="slide2">Hover</li>
+                <li><a class="active" href="${root}/slign" id="registration">免费注册</a></li>
+                <li><a href="${root}/login1" id="login">亲！请登录</a></li>
+                <li><a href="${root}/listGoodsByPage" id="listgoods">商城商品</a></li>
+                <li><a href="#/" id="member">会员中心</a></li>
+                <li><a href="#/">我的管理</a></li>
+                <li><a href="#/" id="help">关于我们</a></li>
+                <li><a href="#/" id="order">我的订单</a></li>
+                <li><a href="#" id="displayCart">&nbsp;&nbsp 购物车</a><span class="car"></span></li>
+            </ul>
+        </div>
+        <div class="secondDiv">
+            <img src="/static/img/logobig.png"/>
+            <input type="text" placeholder="老坛酸菜牛肉面" id="searchtext"/>
+            <input type="button" value="搜索" id="searchbutton"/>
+        </div>
+        <div id="thirdDiv">
+            <div class="layui-tab">
+                <ul class="layui-tab-title">
+                    <li class="layui-this" id="f1" value="1">果蔬</li>
+                    <li id="f2" value="2">家具电器</li>
+                    <li id="f3" value="3">手机电脑</li>
+                    <li id="f4" value="4">食品</li>
+                    <li id="f5" value="5">生活用品</li>
+                    <li id="f6" value="6">书籍</li>
+                    <li id="f7" value="7">饮品</li>
+                    <li id="f8" value="8">服装</li>
+                    <li id="f9" value="9">其他</li>
+                </ul>
+                <div class="layui-tab-content">
+                    <div class="layui-tab-item layui-show" id="d1">
+                        花生
+                    </div>
+                    <div class="layui-tab-item" id="d2">内容1</div>
+                    <div class="layui-tab-item" id="d3">内容2</div>
+                    <div class="layui-tab-item" id="d4">内容3</div>
+                    <div class="layui-tab-item" id="d5">内容4</div>
+                    <div class="layui-tab-item" id="d6">内容5</div>
+                    <div class="layui-tab-item" id="d7">内容6</div>
+                    <div class="layui-tab-item" id="d8">内容7</div>
+                    <div class="layui-tab-item" id="d9">内容8</div>
+                </div>
+            </div>
+        </div>
+        <div id="container">
+            <div class="sections">
+                <div class="section" id="section0"></div>
+                <div class="section" id="section1"></div>
+                <div class="section" id="section2"></div>
+                <div class="section" id="section3"></div>
+                <div class="section" id="section4"></div>
+                <div class="section" id="section5"></div>
+                <div class="section" id="section6"></div>
+            </div>
+        </div>
+        <div id="fourDiv">
+            <div class="four_first">
+                <h1 style="margin-left: auto">热门商品</h1>
+            </div>
+            <div class="four_first">
+
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src='http://demo.lanrenzhijia.com/demo/51/5125/demo/js/jquery-ui.min.js'></script>
+    <script src='/static/home/js/jquery.min.js'></script>
+    <script src="/static/home/js/script.js"></script>
+
+    <link href="/static/js/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <script src="/static/js/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="/static/js/jquery.animate_from_to-1.0.js"></script>
+    <script src="/static/dist/pageSwitch.min.js"></script>
+    <script src="/static/js/container.js"></script>
+    <script src="/static/js/layui.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/backsageHome/layout.css">
+</body>
+</html>
