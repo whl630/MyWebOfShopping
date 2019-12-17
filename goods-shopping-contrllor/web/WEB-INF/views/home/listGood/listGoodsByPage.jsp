@@ -58,12 +58,12 @@
 <body>
 <div class="mycart">
 </div>
+<a style="font-size: 36px;color: blue;text-decoration: none;font-family: 华文新魏" href="/home">返回</a>
 <a style="color: green;font-family: 华文新魏;font-weight: bold;font-size: 50px;margin-left:600px">商品信息</a>
 <span class="car"><img src="/static/img/购物车.jpg" class="shopping-cart" style="width: 60px;height: 60px"></span>
     <div id="list">
 
     </div>
-<script type="text/javascript" src="http://demo.lanrenzhijia.com/demo/51/5125/demo/js/jquery.js"></script>
 <script type="text/javascript" src='http://demo.lanrenzhijia.com/demo/51/5125/demo/js/jquery-ui.min.js'></script>
 <script>
     document.querySelector(".shopping-cart").addEventListener("click", function (evt) {
@@ -81,6 +81,7 @@
             $("#list").html(res)
         });
     }
+
     $(function () {
         listGoods();
     })

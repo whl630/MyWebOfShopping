@@ -12,5 +12,14 @@
 </head>
 <body>
     <h1>商品详情</h1>
+<div id="details">
+    <h1>${details.detailsId}</h1>
+    <h1>${details.detailsShelf}</h1>
+    <h1>${details.detailsQuintity}</h1>
+    <h1>${details.detailsOrigin}</h1>
+    <h1>${details.detailsDes}</h1>
+    <h1>${details.goodsId}</h1>
+    <h1>${details.detailsTime}</h1>
+</div>
 </body>
 </html>

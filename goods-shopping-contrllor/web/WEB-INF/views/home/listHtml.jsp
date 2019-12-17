@@ -25,7 +25,7 @@
 <c:forEach items="${goods.list}" var="good">
     <div class="item" data-id="${good.goodsId}">
         <h4 style="color: green;font-family: 华文新魏;font-size: 25px">${good.goodsName}</h4>
-        <img src="static/goodsphotoes/${good.imgurl}" alt="item" style="width: 195px;height: 180px" />
+        <img src="static/goodsphotoes/${good.imgurl}" alt="item" style="width: 195px;height: 180px" class="showImg" href="${root}/details/getDetails?goodsId=${good.goodsId}"/>
         <p>原价: <b style="color: red;font-size: 24px">￥${good.goodsPrice}</b><br/>
             会员价：<b style="color: green;font-size: 24px">￥${good.disPrice}</b>
         </p>
@@ -85,11 +85,23 @@
             $("#list").html(res);
         })
     }
+    function getDetailes() {
+        $.ajax({
+            method:"GET",
+            url:"${root}/details/getDetails",
+            data:{
+                goodsId: $(this).closest("div").attr("data-id")
+            }
+        }).success(function () {
+            alert("正在进入商品详情视图！")
+        })
+    }
     $(function () {
         $("#page").on("click",".my_li",loadTables);
         //点击图片进入商品详情
-        $(document).on("click",".item",getDetailes());
-
+        $(document).on("click",".showImg",function () {
+            getDetailes()
+        });
         //购物车动画
         $(".add-to-cart").click(function () {
             $(".goods").animate_from_to("#cart")
@@ -108,17 +120,4 @@
             event.preventDefault();
         });
     });
-
-    function getDetailes() {
-        $.ajax({
-            method:"GET",
-            url:"${root}/details/getDetails",
-            data:{
-                goodsId: $(this).closest("div").attr("data-id")
-            }
-        }).success(function () {
-            alert("正在进入商品详情视图！")
-        })
-    }
-
 </script>

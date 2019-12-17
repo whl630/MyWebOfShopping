@@ -5,7 +5,7 @@
     <thead>
     <tr>
         <th>选择</th>
-        <th>序号</th>
+        <th>编号</th>
         <th>商品名称</th>
         <th>商品价格</th>
         <th>会员价格</th>

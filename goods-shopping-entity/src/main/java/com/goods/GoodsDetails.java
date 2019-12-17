@@ -3,6 +3,8 @@ package com.goods;
 import javafx.scene.input.DataFormat;
 import lombok.Data;
 
+import java.util.Date;
+
 @Data
 public class GoodsDetails {
     private int detailsId;//商品信息编号
@@ -11,5 +13,5 @@ public class GoodsDetails {
     private String detailsOrigin;//商品产地
     private String detailsDes;//商品描述
     private int goodsId;//商品编号
-    private DataFormat detailsTime;//商品生产日期
+    private Date detailsTime;//商品生产日期
 }

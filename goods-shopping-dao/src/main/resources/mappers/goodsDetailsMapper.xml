@@ -4,10 +4,20 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.dao.GoodDetailsDao">
     <insert id="insertGoodsDetails">
-
+        insert into goodsdetails(details_shelf,details_quintity,details_origin,details_des,goodsId,details_time)
+        values (#{details_shelf},#{details_quintity},#{details_origin},#{details_des},#{goodsId},#{details_time})
     </insert>
 
-    <select id="getAllBePageToGoodsDetails" resultType="com.goods.GoodsDetails">
+    <delete id="deleteGoodDetails">
+        delete from goodsdetails where details_id = #{detailsId}
+    </delete>
 
+    <select id="getAllBePageToGoodsDetails" resultType="com.goods.GoodsDetails">
+        select  details_id,details_shelf,details_quintity,details_origin,details_des,goodsId,details_time from goodsdetails order by details_id
+    </select>
+
+    <select id="getAGoodsDetailsByGoodsId" resultType="com.goods.GoodsDetails">
+        select details_id,details_shelf,details_quintity,details_origin,details_des,goodsId,details_time from goodsdetails
+        where goodsId = #{goodsId}
     </select>
 </mapper>

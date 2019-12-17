@@ -50,7 +50,7 @@
                     <dl class="layui-nav-child">
                         <dd><a href="${root}/listGood" target="box">商品信息管理</a></dd>
                         <dd><a href="/getGoodsType" target="box">商品类型操作</a></dd>
-                        <dd><a href="/listgooddetails" target="box">商品详情表管理</a></dd>
+                        <dd><a href="/back/listgooddetails" target="box">商品详情表管理</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">

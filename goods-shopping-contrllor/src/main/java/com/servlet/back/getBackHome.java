@@ -36,11 +36,6 @@ public class getBackHome {
 //    public String listGoods(){
 //        return "backstage/goods/listGoods";
 //    }
-    //后台的商品信息界面
-    @RequestMapping("/listgooddetails")
-    public String listgooddetails(){
-        return "backstage/details/gooddetailsOperation";
-    }
 
     //遍历商品到视图
     @RequestMapping("/listGoods")
