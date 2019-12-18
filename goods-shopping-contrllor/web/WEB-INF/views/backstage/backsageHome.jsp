@@ -56,18 +56,18 @@
                 <li class="layui-nav-item">
                     <a href="javascript:;">用户管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">用户信息管理</a></dd>
-                        <dd><a href="javascript:;">账号信息管理</a></dd>
-                        <dd><a href="#">管理员信息管理</a></dd>
+                        <dd><a href="javascript:;" target="box">用户信息管理</a></dd>
+                        <dd><a href="javascript:;" target="box">账号信息管理</a></dd>
+                        <dd><a href="/operator/list" target="box">管理员信息管理</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item">
                     <a href="javascript:;">订单管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">订单(生成订单)</a></dd>
-                        <dd><a href="javascript:;">订单(已发货)</a></dd>
-                        <dd><a href="javascript:;">订单(未签收)</a></dd>
-                        <dd><a href="javascript:;">订单(已签收)</a></dd>
+                        <dd><a href="javascript:;" target="box">订单(生成订单)</a></dd>
+                        <dd><a href="javascript:;" target="box">订单(已发货)</a></dd>
+                        <dd><a href="javascript:;" target="box">订单(未签收)</a></dd>
+                        <dd><a href="javascript:;" target="box">订单(已签收)</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item"><a href="">云市场</a></li>

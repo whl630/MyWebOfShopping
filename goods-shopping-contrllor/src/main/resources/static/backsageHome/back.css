@@ -1,16 +1,16 @@
-#detailsDiv{
+#detailsDiv,#operatorDiv{
     margin-left: 50px;
 }
-#detailsDiv div{
+#detailsDiv,#operatorDiv div{
     margin-bottom: 12px;
 }
-#detailsDiv input{
+#detailsDiv,#operatorDiv input{
     width: 400px;
     height: 36px;
     font-size: 24px;
     color: blue;
 }
-#detailsDiv span{
+#detailsDiv,#operatorDiv span{
     font-size: 24px;
     width: 100px;
     font-font: 华文新魏;

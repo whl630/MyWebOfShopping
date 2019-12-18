@@ -29,6 +29,8 @@ public class CMRDGood {
     //在添加的页面上的select标签上遍历商品类型
     @ModelAttribute("type")
     public List<GoodType> getType(){
+        ModelAndView modelAndView = new ModelAndView();
+
         List<GoodType> lists = goodsAndCustomersService.getGoodsType();
         return lists;
     }

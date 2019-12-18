@@ -1,7 +1,6 @@
 package com.service;
 
 import com.customer.Customer;
-import com.customer.CustomersDao;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

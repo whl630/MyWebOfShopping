@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.operator.OperatorDao">
+    <update id="updateOperatorByOperatorTypeId">customer
+        update operator set operatorTypeId = #{operatorTypeId} where operatorId = #{operatorId}
+    </update>
+
+    <select id="getAllOperators" resultType="com.operator.Operator">
+        select operator_id,operator_username,operator_account,operator_password,operator_time,operator_picture,operator_typeId from operator
+
+--         select a.operator_id,a.operator_username,a.operator_account,a.operator_password,a.operator_time,a.operator_picture
+--         b.o_typeName from operator a left join operatortype b
+--         on a.operator_typeId = b.o_typeId
+    </select>
+
+    <select id="getAnOperatorByAccount" resultType="com.operator.Operator">
+        select operator_id,operator_username,operator_account,operator_password,operator_time,operator_picture,operator_typeId from operator
+        where operator_account = #{operatorAccount} and operator_password = #{operatorPassword}
+    </select>
+
+    <select id="getAllOperatorTypes" resultType="com.operator.OperatorType">
+        select o_typeId,o_typeName from operatortype
+    </select>
+
+    <select id="getAOperator" resultType="com.operator.Operator">
+        select operator_id,operator_username,operator_account,operator_password,operator_time,operator_picture,operator_typeId from operator
+        where operator_id = #{operatorId};
+    </select>
+</mapper>
