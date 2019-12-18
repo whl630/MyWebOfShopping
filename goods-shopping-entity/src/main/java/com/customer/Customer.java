@@ -15,7 +15,7 @@ public class Customer {
     private String password;//密码
     @NotNull
     private String fname;//昵称
-    @Max(8)
+    @NotNull
     private String name;//顾客姓名
     @NotNull
     private String number;//顾客电话

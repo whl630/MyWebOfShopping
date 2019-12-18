@@ -3,13 +3,12 @@
 <c:set var="root" scope="page" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>用户注册</title>
     <link rel='stylesheet prefetch' href='static/css/reset.css'>
     <link rel="stylesheet" type="text/css" href="static/css/default.css">
     <link rel="stylesheet" type="text/css" href="static/css/styles.css">
-    <script src="static/js/jquery-2.1.1.min.js"></script>
+   <script src="static/js/jquery-2.1.1.min.js"></script>
+    <script src="static/js/jquery.js"></script>
 </head>
 <body>
 <header class="htmleaf-header">
@@ -57,26 +56,24 @@
 </article>
 
 
-<script src="static/js/jquery.easing.min.js" type="text/javascript"></script>
-<script src="static/js/style.js" type="text/javascript"></script>
+<script src="/static/js/jquery.easing.min.js" type="text/javascript"></script>
+<script src="/static/js/style.js" type="text/javascript"></script>
 <script>
+    $(function () {
+         $(document).on("click",".submit",doSubmit()).success(function () {
+            alert("注册成功！")
+        }).fail(function () {
+             alert("注册失败！")
+        });
+    })
     function doSubmit(){
         var fname = $(".pwd1").val();
         var name = $(".pwd2").val();
-        if (fname == name){
+        if (fname === name){
             $("#msform").submit();
         }
     }
 
-    $(function () {
-        $(".submit").click(function () {
-            doSubmit();
-        });
-        $("form").submit(function (e) {
-            // console.dirxml(form)
-            alert("正在提交！")
-        })
-    });
 </script>
 </body>
 </html>

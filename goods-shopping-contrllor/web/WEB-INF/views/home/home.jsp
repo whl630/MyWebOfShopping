@@ -89,7 +89,7 @@
                 <li class="slide1">Visited</li>
                 <li class="slide2">Hover</li>
                 <li><a class="active" href="${root}/slign" id="registration">免费注册</a></li>
-                <li><a href="${root}/login1" id="login">亲！请登录</a></li>
+                <li><a href="${root}/login" id="login">亲！请登录</a></li>
                 <li><a href="${root}/listGoodsByPage" id="listgoods">商城商品</a></li>
                 <li><a href="#/" id="member">会员中心</a></li>
                 <li><a href="#/">我的管理</a></li>

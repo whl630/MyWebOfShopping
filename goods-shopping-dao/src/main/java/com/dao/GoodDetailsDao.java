@@ -10,8 +10,12 @@ public interface GoodDetailsDao {
     List<GoodsDetails> getAllBePageToGoodsDetails(@Param("pageNum")int pageNum,@Param("pageSize")int pageSize);
     //添加商品详情
     int insertGoodsDetails(GoodsDetails goodsDetails);
-    //查询一条商品详情信息
+    //通过goodsId查询一条商品详情信息
     GoodsDetails getAGoodsDetailsByGoodsId(int goodsId);
+    //通过detailsId查询一条商品详情信息
+    GoodsDetails getAGoodsDetailsByDetailsId(int detailsId);
     //删除一条商品详情数据
     int deleteGoodDetails(int detailsId);
+    //修改数据
+    int updtaeGoodDetails(GoodsDetails goodsDetails);
 }

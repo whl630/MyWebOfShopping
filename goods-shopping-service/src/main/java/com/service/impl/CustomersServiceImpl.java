@@ -37,5 +37,8 @@ public class CustomersServiceImpl implements CustomersAndLoginService {
         return customersDao.cencelCustomer(aid);
     }
 
-
+    @Override
+    public Customer getACustomer(String account, String password) {
+        return customersDao.getACustomer(account,password);
+    }
 }

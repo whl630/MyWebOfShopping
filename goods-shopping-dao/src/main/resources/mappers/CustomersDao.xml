@@ -23,4 +23,8 @@
     <select id="getAllWithPageCustomers" resultType="com.customer.Customer">
         select aid,account,password,fname,name,number,adress from customer order by aid
     </select>
+
+    <select id="getACustomer" resultType="com.customer.Customer">
+        select aid,account,password,fname,name,number,adress from customer where account = #{account} and password = #{password}
+    </select>
 </mapper>

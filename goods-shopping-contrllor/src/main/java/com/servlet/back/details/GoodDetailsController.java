@@ -7,9 +7,13 @@ import com.service.GoodsDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
@@ -44,9 +48,23 @@ public class GoodDetailsController {
             return "删除失败!";
         }
     }
-    //添加商品详情数据
+    //修改商品进入页面并查询要修改的数据
     @RequestMapping("/updateDetails")
-    public String updateDetails(){
+    public String updateDetails(int detailsId,Model model){
+        GoodsDetails goodsDetails = goodsDetailsService.getAGoodsDetailsByDetailsId(detailsId);
+        model.addAttribute("details",goodsDetails);
         return "backstage/details/updateDetails";
+    }
+    //修改商品详情数据
+    @PostMapping("/update")
+    public ModelAndView update(@Valid GoodsDetails goodsDetails, BindingResult bindingResult){
+        ModelAndView modelAndView = new ModelAndView();
+        int number = goodsDetailsService.updtaeGoodDetails(goodsDetails);
+        if (number > 0){
+            modelAndView.setViewName("redirect:getAllGoodsDetails");
+        }else {
+            modelAndView.setViewName("error/GoodError");
+        }
+        return modelAndView;
     }
 }

@@ -29,7 +29,17 @@ public class GoodsDetailsServiceImpl implements GoodsDetailsService {
     }
 
     @Override
+    public GoodsDetails getAGoodsDetailsByDetailsId(int detailsId) {
+        return goodDetailsDao.getAGoodsDetailsByDetailsId(detailsId);
+    }
+
+    @Override
     public int deleteGoodDetails(int detailsId) {
         return goodDetailsDao.deleteGoodDetails(detailsId);
+    }
+
+    @Override
+    public int updtaeGoodDetails(GoodsDetails goodsDetails) {
+        return goodDetailsDao.updtaeGoodDetails(goodsDetails);
     }
 }

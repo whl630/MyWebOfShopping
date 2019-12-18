@@ -19,13 +19,6 @@ public class getBackHome {
     @Autowired
     private GoodsAndCustomersService goodsAndCustomersService;
 
-    //进入操作员的登录界面
-    @RequestMapping("/login2")
-    public ModelAndView login2(){
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("operator/operatorLogin");
-        return modelAndView;
-    }
     //后台布局主界面
     @RequestMapping("/backhome")
     public String listHome2(){

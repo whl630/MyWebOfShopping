@@ -5,6 +5,9 @@
 <head>
     <title>商品添加页面</title>
     <link rel="stylesheet" type="text/css" href="static/backgood/goodstyle.css">
+    <link rel="stylesheet" type="text/css" href="/static/layui-v2.5.4/layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/globle.css">
+    <script src="/static/backsageHome/layui.js" charset="utf-8"></script>
 </head>
 <body>
 <div id="id">
@@ -38,7 +41,7 @@
             <input type="submit" value="添加">
         </div>
     </form>
-    <a href="/listGood">返回</a>
+    <a href="/listGood"><button type="button" class="layui-btn layui-btn-normal">返回</button></a>
 </div>
 
 </body>

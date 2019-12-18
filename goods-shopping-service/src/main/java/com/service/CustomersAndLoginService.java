@@ -12,4 +12,5 @@ public interface CustomersAndLoginService {
     int updateCustomer(Customer customer);
     int insertCustomer(Customer customer);
     int cencelCustomer(int aid);//注销账号
+    Customer getACustomer(String account,String password);
 }

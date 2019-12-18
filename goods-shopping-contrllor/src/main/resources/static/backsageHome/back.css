@@ -1,0 +1,22 @@
+#detailsDiv{
+    margin-left: 50px;
+}
+#detailsDiv div{
+    margin-bottom: 12px;
+}
+#detailsDiv input{
+    width: 400px;
+    height: 36px;
+    font-size: 24px;
+    color: blue;
+}
+#detailsDiv span{
+    font-size: 24px;
+    width: 100px;
+    font-font: 华文新魏;
+}
+h1{
+    font-size: 42px;
+    font-family: 华文新魏;
+    color: #7AB6B6;
+}

@@ -20,12 +20,18 @@ import java.io.IOException;
 import java.util.List;
 
 @Controller
-public class insertGood {
+public class CMRDGood {
     @Autowired
     private GoodsAndCustomersService goodsAndCustomersService;
     //自定义一个用来上传和下载的前缀路径，用来进行拼接。
     public static final String FILE_DIRECTORY = "E:\\img";
 
+    //在添加的页面上的select标签上遍历商品类型
+    @ModelAttribute("type")
+    public List<GoodType> getType(){
+        List<GoodType> lists = goodsAndCustomersService.getGoodsType();
+        return lists;
+    }
     //添加商品
     @PostMapping("/insertGood")
     public String insert(@Valid Good good,BindingResult bindingResult, MultipartFile photo){
@@ -85,7 +91,7 @@ public class insertGood {
         if (num > 0){
             mav.setViewName("redirect:/listGood");
         }else {
-            mav.setViewName("redirect:/update");
+            mav.setViewName("error/GoodError");
         }
         return mav;
     }

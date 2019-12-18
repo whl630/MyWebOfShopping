@@ -17,19 +17,8 @@ public class shouye {
     @Autowired
     private GoodsAndCustomersService goodsAndCustomersService;
     //进入购物主页面
-    @RequestMapping("/list")
-    public String listHome(){
-        return "home/shoppingHome";
-    }
-
-
-    @RequestMapping("/list1")
-    public String listHome1(){
-        return "home/shoppingHome1";
-    }
-
     @RequestMapping("/home")
-    public String listHome2(){
+    public String listHome(){
         return "home/home";
     }
 

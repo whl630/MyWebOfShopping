@@ -26,9 +26,10 @@
             <td>${details.goodsId}</td>
             <td>${details.detailsTime}</td>
             <td>
-                <a class="del"><i class="fa fa-trash fa-2x" aria-hidden="true" id="delete"></i></a>
+                <button type="button" class="layui-btn layui-btn-danger layui-btn-radius" id="del">删除</button>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-                <a href="${root}/back/updateDetails?detailsId=${details.detailsId}" class="update"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a>
+
+                <a href="${root}/back/updateDetails?detailsId=${details.detailsId}" class="update"><button type="button" class="layui-btn layui-btn-warm layui-btn-radius">修改</button></a>
             </td>
         </tr>
     </c:forEach>
@@ -78,6 +79,6 @@
     }
     $(function() {
         $("#page").on("click",".my_de",loadTables);
-        $("table").on("click",".del",toDelete);
+        $("table").on("click","#del",toDelete);
     })
 </script>

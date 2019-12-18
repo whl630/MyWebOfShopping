@@ -28,12 +28,6 @@ public class GoodTypeController {
         model.addAttribute("type",pageInfo);
         return "backstage/types/goodsType";
     }
-    //在添加的页面上的select标签上遍历商品类型
-    @ModelAttribute("type")
-    public List<GoodType> getType(){
-        List<GoodType> lists = goodsAndCustomersService.getGoodsType();
-        return lists;
-    }
     @RequestMapping("/insertType")
     public String insertGoodType(){
         return "backstage/types/insertGoodType";

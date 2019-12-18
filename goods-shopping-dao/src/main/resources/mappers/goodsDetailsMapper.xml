@@ -8,6 +8,11 @@
         values (#{details_shelf},#{details_quintity},#{details_origin},#{details_des},#{goodsId},#{details_time})
     </insert>
 
+    <update id="updtaeGoodDetails">
+        update goodsdetails set details_shelf=#{detailsShelf},details_quintity=#{detailsQuintity},details_origin=#{detailsOrigin},
+        details_des=#{detailsDes},goodsId=#{goodsId},details_time=#{detailsTime} where details_id=#{detailsId}
+    </update>
+
     <delete id="deleteGoodDetails">
         delete from goodsdetails where details_id = #{detailsId}
     </delete>
@@ -19,5 +24,10 @@
     <select id="getAGoodsDetailsByGoodsId" resultType="com.goods.GoodsDetails">
         select details_id,details_shelf,details_quintity,details_origin,details_des,goodsId,details_time from goodsdetails
         where goodsId = #{goodsId}
+    </select>
+
+    <select id="getAGoodsDetailsByDetailsId" resultType="com.goods.GoodsDetails">
+        select details_id,details_shelf,details_quintity,details_origin,details_des,goodsId,details_time from goodsdetails
+        where details_id = #{detailsId}
     </select>
 </mapper>
