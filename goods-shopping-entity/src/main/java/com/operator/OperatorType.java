@@ -22,7 +22,6 @@ public class OperatorType {
     public void setoTypeName(String oTypeName) {
         this.oTypeName = oTypeName;
     }
-
     @Override
     public String toString() {
         return "OperatorType{" +
