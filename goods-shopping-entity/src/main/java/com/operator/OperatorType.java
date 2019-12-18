@@ -18,7 +18,6 @@ public class OperatorType {
     public String getoTypeName() {
         return oTypeName;
     }
-
     public void setoTypeName(String oTypeName) {
         this.oTypeName = oTypeName;
     }
