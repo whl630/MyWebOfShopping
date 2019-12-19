@@ -29,7 +29,7 @@
         <p>原价: <b style="color: red;font-size: 24px">￥${good.goodsPrice}</b><br/>
             会员价：<b style="color: green;font-size: 24px">￥${good.disPrice}</b>
         </p>
-        <button class="add-to-cart" data-id="${good.goodsId}" type="button" style="border: 1px solid red;font-size: 18px;font-family: 华文新魏;">添加到购物车</button>
+        <button class="add-to-cart " data-id="${good.goodsId}" type="button" style="border: 1px solid red;font-size: 18px;font-family: 华文新魏;">添加到购物车</button>
     </div>
 </c:forEach>
 
@@ -106,6 +106,7 @@
         $(".add-to-cart").click(function () {
             $(".goods").animate_from_to("#cart")
         });
+        //点击添加到购物车实现添加到购物车
         $(".add-to-cart").click(function (event) {
             $.ajax({
                 method: "GET",
