@@ -25,7 +25,7 @@
 <c:forEach items="${goods.list}" var="good">
     <div class="item" data-id="${good.goodsId}">
         <h4 style="color: green;font-family: 华文新魏;font-size: 25px">${good.goodsName}</h4>
-        <img src="static/goodsphotoes/${good.imgurl}" alt="item" style="width: 195px;height: 180px" class="showImg" href="${root}/details/getDetails?goodsId=${good.goodsId}"/>
+       <a href="${root}/details/getDetails?goodsId=${good.goodsId}"><img src="static/goodsphotoes/${good.imgurl}" alt="item" style="width: 195px;height: 180px" class="showImg"/></a>
         <p>原价: <b style="color: red;font-size: 24px">￥${good.goodsPrice}</b><br/>
             会员价：<b style="color: green;font-size: 24px">￥${good.disPrice}</b>
         </p>
