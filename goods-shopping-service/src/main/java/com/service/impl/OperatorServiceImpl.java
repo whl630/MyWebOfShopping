@@ -24,8 +24,8 @@ public class OperatorServiceImpl implements OperatorService {
     }
 
     @Override
-    public int updateOperatorByOperatorTypeId(int operatorTypeId) {
-        return operatorDao.updateOperatorByOperatorTypeId(operatorTypeId);
+    public int updateOperatorByOperatorTypeId(int operatorTypeId,int operatorId) {
+        return operatorDao.updateOperatorByOperatorTypeId(operatorTypeId, operatorId);
     }
 
     @Override

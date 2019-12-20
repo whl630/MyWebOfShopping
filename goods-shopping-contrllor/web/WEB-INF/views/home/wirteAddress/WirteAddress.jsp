@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: looki
-  Date: 2019/12/19
-  Time: 15:18
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -19,25 +12,45 @@
             background-size:cover;
             background-attachment: fixed;
         }
+        #adress{
+            width: 600px;
+            height: 500px;
+            margin: auto;
+            border: 1px solid ;
+        }
+        select{
+            width: 200px;
+            height: 30px;
+        }
+        input{
+            width: 300px;
+            height: 30px;
+        }
     </style>
 </head>
 <body>
-<label>
+<div id="adress">
+    <h1 style="font-size: 27px;color: #1b6d85">地址编辑</h1><br/>
     省:
     <select id="province" name="province">
         <option value="">--请选择一个省份--</option>
     </select>
-</label>
-<label>
-    市:
-    <select id="city" name="city">
-        <option value="">--请选择一个城市--</option>
-    </select>
-</label>
-<label>
-    区或县:
-    <input type="text" placeholder="请输入您所在的县或区">
-</label>
+    </label>
+    <label>
+        市:
+        <select id="city" name="city">
+            <option value="">--请选择一个城市--</option>
+        </select>
+    </label><br/>
+    <label>
+        详细地址:
+        <input type="text" placeholder="请输入您所在的县或区">
+    </label>
+</div>
+
+<input type="button" class="ignore" value="已有地址，直接跳过">
+
+
 <script>
     var arr = ["安徽省","北京市","重庆市","福建省","甘肃省","广东省","广西壮族自治区","贵州省","海南省"," 河北省","河南省","黑龙江省","湖北省","湖南省","吉林省","江苏省"," 江西省","辽宁省","内蒙古自治区","宁夏回族自治区"," 青海省","山东省","山西省","陕西省","上海市","四川省","天津市","西藏自治区","新疆维吾尔族自治区","云南省","浙江省"];
 

@@ -3,7 +3,7 @@
 <c:set var="root" scope="page" value="${pageContext.request.contextPath}"/>
 <style>
     .table{
-        width: 1000px;
+        width: 1200px;
         height: 400px;
         border: 1px solid darkgreen;
         margin-left: 20px;

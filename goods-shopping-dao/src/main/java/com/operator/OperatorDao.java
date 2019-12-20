@@ -10,7 +10,7 @@ public interface OperatorDao {
     //管理员登录验证
     Operator getAnOperatorByAccount(@Param("operatorAccount") String operatorAccount, @Param("operatorPassword") String operatorPassword);
 
-    int updateOperatorByOperatorTypeId(int operatorTypeId);
+    int updateOperatorByOperatorTypeId(@Param("operatorTypeId") int operatorTypeId,@Param("operatorId")int operatorId);
 
     List<OperatorType> getAllOperatorTypes();
 

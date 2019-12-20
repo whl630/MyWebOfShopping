@@ -76,6 +76,7 @@ public class CMRDGood {
         return "backstage/goods/updateGood";
     }
 
+
     //修改,并且商品编号设为只读
     @PostMapping("/updateGood")
     public ModelAndView updateGood(@Valid Good good, BindingResult bindingResult, MultipartFile photo){

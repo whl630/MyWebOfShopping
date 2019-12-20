@@ -38,19 +38,21 @@ public class CMRDOperator {
         return "backstage/operator/updateOperator";
     }
 
-    @RequestMapping("/update")
-    public String updateOperator2(int operatorId){
-       int num = operatorService.updateOperatorByOperatorTypeId(operatorId);
-        if (num > 0){
-            return "redirect:list";
-        }else {
-            return "backstage/operator/updateOperator";
-        }
-    }
+
 
     @ModelAttribute("operatorType")
     public List<OperatorType> getType(){
         List<OperatorType> lists = operatorService.getAllOperatorTypes();
         return lists;
+    }
+
+    @RequestMapping("/update")
+    public String updateOperator(int operatorTypeId,int operatorId){
+      int num = operatorService.updateOperatorByOperatorTypeId(operatorTypeId,operatorId);
+        if (num > 0){
+            return "redirect:list";
+        }else {
+            return "backstage/operator/updateOperator";
+        }
     }
 }

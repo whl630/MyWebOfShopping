@@ -10,10 +10,10 @@ public class SystemControllerAdvice {
     public String getErrors(){
         return "error/GoodError";
     }
-    @ExceptionHandler(RuntimeException.class)
-    public String getErrors2(){
-        return "error/GoodError2";
-    }
+//    @ExceptionHandler(RuntimeException.class)
+//    public String getErrors2(){
+//        return "error/GoodError2";
+//    }
     @ExceptionHandler(NestedServletException.class)
     public String getErrors3(){
         return "error/GoodError3";

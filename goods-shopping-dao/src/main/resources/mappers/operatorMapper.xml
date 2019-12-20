@@ -3,8 +3,8 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.operator.OperatorDao">
-    <update id="updateOperatorByOperatorTypeId">customer
-        update operator set operatorTypeId = #{operatorTypeId} where operatorId = #{operatorId}
+    <update id="updateOperatorByOperatorTypeId">
+        update operator set operator_typeId = #{operatorTypeId} where operator_id = #{operatorId}
     </update>
 
     <select id="getAllOperators" resultType="com.operator.Operator">

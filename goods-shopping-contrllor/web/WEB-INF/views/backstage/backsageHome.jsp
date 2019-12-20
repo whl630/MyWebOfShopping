@@ -29,15 +29,20 @@
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">
                 <a href="javascript:;">
-                    <img src="/static/images/张三.jpg" class="layui-nav-img">
-                    张三
+                    <c:if test="${sessionScope.operator != null}">
+                    <img src="/static/images/${sessionScope.operator.operatorPicture}" class="layui-nav-img" style="width: 50px;height: 50px">
+                    <span style="color: white">${sessionScope.operator.operatorUsername}</span>
+                    </c:if>
+                    <c:if test="${sessionScope.operator == null}">
+                        <img src="/static/images/张三.jpg" class="layui-nav-img">
+                    </c:if>
                 </a>
                 <dl class="layui-nav-child">
                     <dd><a href="">基本资料</a></dd>
                     <dd><a href="">安全设置</a></dd>
                 </dl>
             </li>
-            <li class="layui-nav-item"><a href="">退出</a></li>
+            <li class="layui-nav-item"><a href="/quit">退出</a></li>
         </ul>
     </div>
 

@@ -1,16 +1,20 @@
 package com.servlet.loginAndSign;
 
 import com.customer.Customer;
+import com.operator.Operator;
 import com.service.CustomersAndLoginService;
+import com.service.OperatorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -18,6 +22,9 @@ import java.util.List;
 public class LoginAndSignUp {
     @Autowired
     private CustomersAndLoginService customersAndLoginService;
+    @Autowired
+    private OperatorService operatorService;
+
     //进入用户的登录界面(CSS3动态背景登录页面)
     @RequestMapping("/login")
     public ModelAndView login(){
@@ -71,5 +78,29 @@ public class LoginAndSignUp {
         modelAndView.setViewName("operator/operatorLogin");
         return modelAndView;
     }
+    //验证操作员账号和密码
+    @RequestMapping("/operatorLogin2")
+    public ModelAndView operatorLogin2(String operatorAccount, String operatorPassword, HttpServletRequest request){
+        ModelAndView modelAndView = new ModelAndView();
+       HttpSession session = request.getSession();
+        Operator operator = operatorService.getAnOperatorByAccount(operatorAccount,operatorPassword);
+        if (operator != null){
+            modelAndView.setViewName("redirect:backhome");
+            session.setAttribute("operator",operator);
+        }else {
+            modelAndView.setViewName("redirect:operatorLogin");
+        }
+        return modelAndView;
+    }
+
+    //退出账号
+    @RequestMapping("/quit")
+    public ModelAndView quit(HttpServletRequest request){
+        ModelAndView modelAndView = new ModelAndView();
+        request.getSession().removeAttribute("operator");
+        modelAndView.setViewName("redirect:backhome");
+        return modelAndView;
+    }
+
 
 }
