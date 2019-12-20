@@ -51,18 +51,26 @@ public class LoginAndSignUp {
 
     //添加用户信息到数据库
     @RequestMapping("/getLogin")
-    public ModelAndView getLogin(String account, String password, Model model){
+    public ModelAndView getLogin(String account, String password,HttpServletRequest request){
         ModelAndView mav = new ModelAndView();
+        HttpSession session = request.getSession();
         Customer customer = customersAndLoginService.getACustomer(account,password);
         if (customer != null){
-            model.addAttribute("mess","登录成功！");
+            session.setAttribute("customer",customer);
             mav.setViewName("redirect:home");
         }else {
-            model.addAttribute("mess","并没有该账号！");
             mav.setViewName("redirect:login");
         }
         return mav;
     }
+    //顾客注销
+    @RequestMapping("/customerQuit")
+    public String customerQuit(HttpServletRequest request){
+        request.getSession().removeAttribute("customer");
+        return "redirect:home";
+    }
+
+
     //进入到游客注册页面
     @RequestMapping("/slign")
     public ModelAndView slign(){

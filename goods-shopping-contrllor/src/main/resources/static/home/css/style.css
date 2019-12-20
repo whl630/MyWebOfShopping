@@ -113,15 +113,12 @@ body {
 #thirdDiv{
     border: 1px solid blue;
     margin-left: 2px;
-    width: 718px;
-    height: 400px;
+    width: 760px;
+    height: 450px;
     float: left;
     background-color: antiquewhite;
 }
-#container{
-    width: 778px;
-    float: right;
-}
+
 #fourDiv{
     width: 100%;
     height: 800px;

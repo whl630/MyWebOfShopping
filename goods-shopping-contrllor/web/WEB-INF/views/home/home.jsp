@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="static/layui-v2.5.4/layui/css/layui.css" type="text/css" media="all">
     <script src="static/layui-v2.5.4/layui/layui.js" type="text/javascript"></script>
     <script src="/static/js/jquery.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/static/css/globle.css">
+    <script src="/static/backsageHome/layui.js" charset="utf-8"></script>
     <style>
         .wrapper {
             width: 705px;
@@ -73,31 +76,64 @@
         span.car {
             float: right;
         }
-        .shopping-cart {
-            display: inline-block;
-            background: url('static/img/购物车.jpg') no-repeat 0 0;
-            width: 24px;
-            height: 24px;
-            margin: 0 10px 0 0;
+        #container{
+            width: 915px;
+            height: 450px;
+            float: right;
+        }
+        #mydiv li a{
+            font-size: 28px;
+            float: left;
+            margin-left: 110px;
+            font-family: 华文新魏;
+        }
+        #mydiv li a:hover{
+            font-weight: bold;
+            color: green;
+            text-decoration: none;
+        }
+        #mydiv .listgoods{
+            margin-left: 360px;
+        }
+
+        body{
+            background: url("/static/images/管理员登录背景图.jpg") no-repeat center center;
+            background-size:cover;
+            background-attachment: fixed;
         }
     </style>
 </head>
 <body>
     <div class="parentDiv">
+        <c:if test="${sessionScope.customer != null}">
+                您好！尊贵的<span>${sessionScope.customer.fname}</span>
+                <a href="/customerQuit"><button type="button" class="layui-btn layui-btn-lg layui-btn-normal" id="getPhoto">注销</button></a><br/>
+            <div id="mydiv">
+                <li><a href="${root}/listGoodsByPage" class="listgoods">商城商品</a></li>
+                <li><a href="#/" class="member">会员中心</a></li>
+                <li><a href="#/">我的管理</a></li>
+                <li><a href="#/" class="help">关于我们</a></li>
+                <li><a href="#/" class="order">我的订单</a></li>
+                <li><a href="#" class="displayCart">&nbsp;&nbsp 购物车</a><span class="car"></span></li>
+            </div>
+            <img src="/static/images/张三.jpg" style="width: 120px;height: 120px;border-radius: 120px">
+        </c:if>
+        <c:if test="${sessionScope.customer == null}">
         <div id="nav-1">
             <ul class="nav">
                 <li class="slide1">Visited</li>
                 <li class="slide2">Hover</li>
-                <li><a class="active" href="${root}/slign" id="registration">免费注册</a></li>
-                <li><a href="${root}/login" id="login">亲！请登录</a></li>
-                <li><a href="${root}/listGoodsByPage" id="listgoods">商城商品</a></li>
-                <li><a href="#/" id="member">会员中心</a></li>
-                <li><a href="#/">我的管理</a></li>
-                <li><a href="#/" id="help">关于我们</a></li>
-                <li><a href="#/" id="order">我的订单</a></li>
-                <li><a href="#" id="displayCart">&nbsp;&nbsp 购物车</a><span class="car"></span></li>
+                    <li><a class="active" href="${root}/slign" class="registration">免费注册</a></li>
+                    <li><a href="${root}/login" class="login">亲！请登录</a></li>
+                    <li><a href="${root}/listGoodsByPage" class="listgoods">商城商品</a></li>
+                    <li><a href="#/" class="member">会员中心</a></li>
+                    <li><a href="#/">我的管理</a></li>
+                    <li><a href="#/" class="help">关于我们</a></li>
+                    <li><a href="#/" class="order">我的订单</a></li>
+                    <li><a href="#" class="displayCart">&nbsp;&nbsp 购物车</a><span class="car"></span></li>
             </ul>
         </div>
+        </c:if>
         <div class="secondDiv">
             <img src="/static/img/logobig.png"/>
             <input type="text" placeholder="老坛酸菜牛肉面" id="searchtext"/>

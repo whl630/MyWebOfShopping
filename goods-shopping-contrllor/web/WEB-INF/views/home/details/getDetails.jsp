@@ -52,8 +52,8 @@
             margin-left: 18px;
         }
         img{
-            width: 300px;
-            height: 420px;
+            width: 360px;
+            height: 480px;
             margin-top: 24px;
         }
         .layui-btn{
