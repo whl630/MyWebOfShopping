@@ -11,8 +11,30 @@
 <html>
 <head>
     <title>员工升职降职</title>
-    <link rel="stylesheet" type="text/css" href="/static/backsageHome/back.css">
+    <link rel="stylesheet" type="text/css" href="/static/backsageHome/operator.css">
+    <link rel="stylesheet" type="text/css" href="/static/layui-v2.5.4/layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/globle.css">
+    <script src="/static/backsageHome/layui.js" charset="utf-8"></script>
     <style>
+        #operatorDiv{
+            width: 800px;
+            height: 600px;
+            border: 1px solid blue;
+            margin-left: 50px;
+            box-shadow: 0px 10px 5px blue;
+            margin-top: 5px;
+        }
+        #operatorDiv input{
+            margin-left: 6px;
+        }
+        #operatorDiv span{
+            margin-left: 72px;
+        }
+        h1{
+            font-size: 36px;
+            font-family: 华文新魏;
+            color: #1d7db1;
+        }
         select{
             width: 270px;
             height: 36px;
@@ -48,9 +70,10 @@
                 </select>
         </div>
         <div>
-            <input type="submit" id="subitDetails" value="提交" style="font-size: 25px;color: white;background-color: blueviolet">
+            <input type="submit" id="subitDetails" value="提交" style="font-size: 25px;color: white;background-color: blueviolet;margin-left: 120px">
         </div>
     </form>
 </div>
+    <a href="/operator/list"><button type="button" class="layui-btn layui-btn-normal" style="margin-top: 15px;margin-left: 860px">返回</button></a>
 </body>
 </html>

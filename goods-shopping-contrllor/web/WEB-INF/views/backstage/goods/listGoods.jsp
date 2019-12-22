@@ -42,7 +42,7 @@
 </div>
 
 <script>
-    //查询
+    //查询所有商品
     function loadTable() {
         $.ajax({
             method: "GET",

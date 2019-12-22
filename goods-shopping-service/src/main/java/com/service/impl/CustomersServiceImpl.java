@@ -41,4 +41,9 @@ public class CustomersServiceImpl implements CustomersAndLoginService {
     public Customer getACustomer(String account, String password) {
         return customersDao.getACustomer(account,password);
     }
+
+    @Override
+    public Customer getACustomerByAid(int aid) {
+        return customersDao.getACustomerByAid(aid);
+    }
 }

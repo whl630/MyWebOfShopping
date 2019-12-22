@@ -27,4 +27,7 @@
     <select id="getACustomer" resultType="com.customer.Customer">
         select aid,account,password,fname,name,number,adress from customer where account = #{account} and password = #{password}
     </select>
+    <select id="getACustomerByAid" resultType="com.customer.Customer">
+        select aid,account,password,fname,name,number,adress from customer where aid = #{aid}
+    </select>
 </mapper>

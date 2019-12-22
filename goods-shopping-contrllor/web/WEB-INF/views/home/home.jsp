@@ -106,7 +106,7 @@
 <body>
     <div class="parentDiv">
         <c:if test="${sessionScope.customer != null}">
-                您好！尊贵的<span>${sessionScope.customer.fname}</span>
+                您好！尊贵的&nbsp;<span style="font-size: 27px">${sessionScope.customer.fname}</span>
                 <a href="/customerQuit"><button type="button" class="layui-btn layui-btn-lg layui-btn-normal" id="getPhoto">注销</button></a><br/>
             <div id="mydiv">
                 <li><a href="${root}/listGoodsByPage" class="listgoods">商城商品</a></li>
@@ -116,7 +116,6 @@
                 <li><a href="#/" class="order">我的订单</a></li>
                 <li><a href="#" class="displayCart">&nbsp;&nbsp 购物车</a><span class="car"></span></li>
             </div>
-            <img src="/static/images/张三.jpg" style="width: 120px;height: 120px;border-radius: 120px">
         </c:if>
         <c:if test="${sessionScope.customer == null}">
         <div id="nav-1">

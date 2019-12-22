@@ -4,7 +4,38 @@
 <html>
 <head>
     <title>修改商品详情数据</title>
-    <link rel="stylesheet" type="text/css" href="/static/backsageHome/back.css">
+    <link rel="stylesheet" type="text/css" href="/static/layui-v2.5.4/layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/globle.css">
+    <script src="/static/backsageHome/layui.js" charset="utf-8"></script>
+    <style>
+        h1{
+            font-size: 36px;
+            font-family: 华文新魏;
+            color: #1d7db1;
+        }
+        #detailsDiv{
+            width: 800px;
+            height: 600px;
+            border: 1px solid blue;
+            margin-left: 50px;
+            box-shadow: 0px 10px 5px blue;
+        }
+        #detailsDiv div{
+            margin-bottom: 15px;
+        }
+        span{
+            font-size: 24px;
+            color: blueviolet;
+            margin-left: 24px;
+        }
+        input{
+            width:560px;
+            height: 36px;
+            font-size: 27px;
+            margin-left: 64px;
+            border: 1px solid blueviolet;
+        }
+    </style>
 </head>
 <body>
     <div id="detailsDiv">
@@ -29,7 +60,7 @@
                 <span>商品编号：</span><input type="text" name="goodsId" value="${details.goodsId}" readonly="readonly"><br/>
             </div>
             <div>
-                <span>生产日期：</span><input type="text" value="${details.detailsTime}"> <input type="date" name="detailsTime" >
+                <span>生产日期：</span><input type="text" value="${details.detailsTime}"><br/> <input type="date" name="detailsTime" >
             </div>
 
             <div>
@@ -37,5 +68,6 @@
             </div>
         </form>
     </div>
+    <a href="/back/listgooddetails"><button type="button" class="layui-btn layui-btn-normal" style="margin-top: 15px;margin-left: 860px">返回</button></a>
 </body>
 </html>

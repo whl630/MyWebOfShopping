@@ -13,4 +13,5 @@ public interface CustomersDao {
     int cencelCustomer(int aid);//注销账号
     //通过账号名查询一条信息（用于登录校验）
     Customer getACustomer(@Param("account") String account, @Param("password") String password);
+    Customer getACustomerByAid(int aid);
 }
