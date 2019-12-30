@@ -101,6 +101,14 @@
             background-size:cover;
             background-attachment: fixed;
         }
+        #thirdDiv{
+            border: 1px solid blue;
+            margin-left: 2px;
+            width: 760px;
+            height: 450px;
+            float: left;
+            background-color: antiquewhite;
+        }
     </style>
 </head>
 <body>
@@ -141,28 +149,28 @@
         <div id="thirdDiv">
             <div class="layui-tab">
                 <ul class="layui-tab-title">
-                    <li class="layui-this" id="f1" value="1">果蔬</li>
-                    <li id="f2" value="2">家具电器</li>
-                    <li id="f3" value="3">手机电脑</li>
-                    <li id="f4" value="4">食品</li>
-                    <li id="f5" value="5">生活用品</li>
-                    <li id="f6" value="6">书籍</li>
-                    <li id="f7" value="7">饮品</li>
-                    <li id="f8" value="8">服装</li>
-                    <li id="f9" value="9">其他</li>
+                    <li class="layui-this">果蔬</li>
+                    <li>家具电器</li>
+                    <li>手机电脑</li>
+                    <li>食品</li>
+                    <li>生活用品</li>
+                    <li>书籍</li>
+                    <li>饮品</li>
+                    <li>服装</li>
+                    <li>其他</li>
                 </ul>
                 <div class="layui-tab-content">
-                    <div class="layui-tab-item layui-show" id="d1">
+                    <div class="layui-tab-item layui-show">
                         花生
                     </div>
-                    <div class="layui-tab-item" id="d2">内容1</div>
-                    <div class="layui-tab-item" id="d3">内容2</div>
-                    <div class="layui-tab-item" id="d4">内容3</div>
-                    <div class="layui-tab-item" id="d5">内容4</div>
-                    <div class="layui-tab-item" id="d6">内容5</div>
-                    <div class="layui-tab-item" id="d7">内容6</div>
-                    <div class="layui-tab-item" id="d8">内容7</div>
-                    <div class="layui-tab-item" id="d9">内容8</div>
+                    <div class="layui-tab-item">内容1</div>
+                    <div class="layui-tab-item">内容2</div>
+                    <div class="layui-tab-item">内容3</div>
+                    <div class="layui-tab-item">内容4</div>
+                    <div class="layui-tab-item">内容5</div>
+                    <div class="layui-tab-item">内容6</div>
+                    <div class="layui-tab-item">内容7</div>
+                    <div class="layui-tab-item">内容8</div>
                 </div>
             </div>
         </div>
@@ -186,11 +194,11 @@
             </div>
         </div>
     </div>
-
     <script type="text/javascript" src='http://demo.lanrenzhijia.com/demo/51/5125/demo/js/jquery-ui.min.js'></script>
     <script src='/static/home/js/jquery.min.js'></script>
     <script src="/static/home/js/script.js"></script>
 
+    <script src="/static/js/HomeGetGoodsNames.js"></script>
     <link href="/static/js/bootstrap.min.css" type="text/css" rel="stylesheet">
     <script src="/static/js/jquery-1.11.0.min.js" type="text/javascript"></script>
     <script src="/static/js/jquery.animate_from_to-1.0.js"></script>
@@ -198,5 +206,6 @@
     <script src="/static/js/container.js"></script>
     <script src="/static/js/layui.js"></script>
     <link rel="stylesheet" type="text/css" href="/static/backsageHome/layout.css">
+
 </body>
 </html>

@@ -61,7 +61,7 @@
         </property>
     </bean>
 
-    <mybatis:scan base-package="com.dao,com.customer,com.employee,com.orders,com.operator"/>
+    <mybatis:scan base-package="com.dao,com.customer,com.orders,com.operator"/>
 
 
 </beans>

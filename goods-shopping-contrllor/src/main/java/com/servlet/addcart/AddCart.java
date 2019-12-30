@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @Controller
@@ -18,7 +19,7 @@ public class AddCart {
     @Autowired
     private GoodsAndCustomersService goodsAndCustomersService;
     @RequestMapping("/addCart")
-    public String getGoodsAddCart(int goodsId, HttpServletRequest req){
+    public void getGoodsAddCart(int goodsId, HttpServletRequest req){
         //将此ID的商品添加到购物车。
         HttpSession session = req.getSession();
         //更新保存在cart中的值
@@ -31,10 +32,36 @@ public class AddCart {
         }
         cart.add(good,1);
         session.setAttribute("cart",cart);
-        return "添加";
     }
     @RequestMapping("/cartInfo")
     public String getGoodsAddCart(){
+
         return "home/shoppingCart/myShoppingCart";
     }
+
+//    @RequestMapping("/deleteCart")
+//    public String deleteCart(HttpServletRequest request){
+//        request.getSession().removeAttribute("cart");
+//        return "home/shoppingCart/myShoppingCart";
+//    }
+
+    //删除购物车中的商品，（只是移除在购物车中的数据，并不删除数据）
+    @RequestMapping("/delGood")
+    public String delGood(int goodsId, HttpServletRequest request){
+        HttpSession session = request.getSession();
+        Cart cart = (Cart) session.getAttribute("cart");
+
+        if (goodsId == -1){
+            cart.clear();
+        }else {
+            cart.remove(goodsId);
+        }
+        return "home/shoppingCart/myShoppingCart?showCart=1";
+    }
+
+    //结算
+//    @RequestMapping("/getPay")
+//    public String getPay(){
+//
+//    }
 }

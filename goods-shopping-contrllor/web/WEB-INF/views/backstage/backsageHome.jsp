@@ -16,8 +16,8 @@
         <!-- 头部区域（可配合layui已有的水平导航） -->
         <ul class="layui-nav layui-layout-left">
             <li class="layui-nav-item"><a href="">控制台</a></li>
-            <li class="layui-nav-item"><a href="">商品管理</a></li>
-            <li class="layui-nav-item"><a href="">用户</a></li>
+            <li class="layui-nav-item"><a href="${root}/listGood" target="box">商品管理</a></li>
+            <li class="layui-nav-item"><a href="/getCustomer" target="box">用户</a></li>
             <li class="layui-nav-item">
                 <a href="javascript:;">其它系统</a>
                 <dl class="layui-nav-child">
@@ -65,7 +65,7 @@
                 <li class="layui-nav-item">
                     <a href="javascript:;">用户管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="/getCustomer;" target="box">用户信息管理</a></dd>
+                        <dd><a href="/getCustomer" target="box">用户信息管理</a></dd>
                         <dd><a href="javascript:;" target="box">会员信息管理</a></dd>
                         <dd><a href="/operator/list" target="box">管理员信息管理</a></dd>
                     </dl>
@@ -87,11 +87,10 @@
 
     <div class="layui-body">
         <!-- 内容主体区域 -->
-        <iframe name="box" width="1300px" height="2000px">
+        <iframe name="box" width="1400px" height="2000px">
 
         </iframe>
     </div>
-
 
     <div class="layui-footer">
         <!-- 底部固定区域 -->

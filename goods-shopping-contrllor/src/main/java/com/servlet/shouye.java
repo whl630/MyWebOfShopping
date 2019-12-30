@@ -29,20 +29,14 @@ public class shouye {
     //遍历商品到视图
     @RequestMapping("/getGoods")
     public String listGoods(@RequestParam(defaultValue = "1",required = false,name = "pageNum") int pageNum,
-                            @RequestParam(defaultValue = "18",required = false,name = "pageSize") int pageSize,
+                            @RequestParam(defaultValue = "21",required = false,name = "pageSize") int pageSize,
                             Model model){
         List<Good> lists = goodsAndCustomersService.getAllGoods(pageNum,pageSize);
         PageInfo<Good> pageInfo = new PageInfo<>(lists,5);
         model.addAttribute("goods",pageInfo);
         return "home/listHtml";
 }
-    //遍历商品名
-//    @RequestMapping("/listName")
-//    @ResponseBody
-//    public List<Good> listGoodsName(int categoryId){
-//        List<Good> lists = customersService.getSomeGoods(categoryId);
-//        return lists;
-//    }
+
     @RequestMapping("/listName")
     public String getSomeGoodsName(int categoryId,Model model){
         List<Good> lists = goodsAndCustomersService.getSomeGoodsByCategoryId(categoryId);

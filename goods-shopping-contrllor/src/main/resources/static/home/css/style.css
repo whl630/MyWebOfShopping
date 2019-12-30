@@ -110,14 +110,6 @@ body {
     background-color: red;
     border: #FF0000 solid 2px;
 }
-#thirdDiv{
-    border: 1px solid blue;
-    margin-left: 2px;
-    width: 760px;
-    height: 450px;
-    float: left;
-    background-color: antiquewhite;
-}
 
 #fourDiv{
     width: 100%;

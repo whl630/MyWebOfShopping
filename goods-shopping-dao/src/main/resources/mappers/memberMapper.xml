@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.customer.MemberDao">
+
+    <select id="getAllMembers" resultType="com.customer.Member">
+        select mid,aid,ismember,member_time,expiration_time from member order by mid
+    </select>
+</mapper>

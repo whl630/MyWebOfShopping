@@ -6,9 +6,10 @@
 <style>
     #page{
         border: 1px solid yellow;
-        width: 100%;
+        width: 1000px;
         height: 50px;
         float: left;
+        margin-left: 270px;
     }
     #page .my_li{
         width: 100px;
@@ -110,7 +111,7 @@
         $(".add-to-cart").click(function (event) {
             $.ajax({
                 method: "GET",
-                url:"${root}/addCart",
+                url:"${root}/shopping/addCart",
                 data: {
                     goodsId: $(this).closest("tr").attr("data-id")
                 }

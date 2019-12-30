@@ -37,10 +37,43 @@
         //加载购物车
         function loadCart() {
             $(".mycart").load("${root}/shopping/cartInfo");
+            $(".mycart").click(function () {
+                $.ajax({
+                    method:"GET",
+                    url:""
+                })
+            })
+        }
+        function deleteCart() {
+                $.ajax({
+                    method:"GET",
+                    url:"/shopping/delGood",
+                    data:{
+                        goodsId:-1
+                    }
+                }).done(function () {
+                    alert($(this).closest("tr").attr("data-id"))
+                    loadCart();
+                })
+        }
+        function delGood() {
+            $.ajax({
+                method: "GET",
+                url: "/shopping/delGood",
+                data:{
+                    goodsId:$(this).closest("tr").attr("data-id")
+                }
+            }).done(function () {
+                alert($(this).closest("tr").attr("data-id"))
+                loadCart();
+            })
         }
         $(function () {
             loadCart();
-            //将商品添加至购物车中
+            //将商品添加至购物车中//清空购物车
+            $(document).on("click","#deleteCart",deleteCart);
+            //删除购物车中的商品
+            $(document).on("click",".delGood",delGood);
 
             $(document).on("click",".add-to-cart",function (event) {
                 $.ajax({
@@ -57,6 +90,7 @@
 </head>
 <body>
 <div class="mycart">
+
 </div>
 <a style="font-size: 36px;color: blue;text-decoration: none;font-family: 华文新魏" href="/home">返回</a>
 
