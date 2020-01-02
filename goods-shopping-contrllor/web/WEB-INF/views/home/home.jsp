@@ -136,7 +136,7 @@
                     <li><a href="#/" class="member">会员中心</a></li>
                     <li><a href="#/">我的管理</a></li>
                     <li><a href="#/" class="help">关于我们</a></li>
-                    <li><a href="#/" class="order">我的订单</a></li>
+                    <li><a href="${root}/order/listOrders" class="order">我的订单</a></li>
                     <li><a href="#" class="displayCart">&nbsp;&nbsp 购物车</a><span class="car"></span></li>
             </ul>
         </div>
