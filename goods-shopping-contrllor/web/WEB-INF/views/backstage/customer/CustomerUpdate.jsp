@@ -69,10 +69,7 @@
             <span>用户号码：</span><input type="text" name="number" value="${customer.number}" readonly="readonly"><br/>
         </div>
         <div>
-            <span>用户地址：</span><input type="text" value="${customer.adress}"><br/>
-        </div>
-        <div>
-            <span>修改地址：</span> <input type="text" name="adress" >
+            <span>用户地址：</span><input type="text" value="${customer.adress}" name="adress"><br/>
         </div>
         <div>
             <input type="submit" id="subitDetails" value="提交" style="font-size: 25px;color: white;background-color: blueviolet">

@@ -37,7 +37,7 @@
                     </c:if>
                     <c:if test="${sessionScope.operator == null}">
                         <img src="/static/img/默认头像.jpg" class="layui-nav-img" style="width: 50px;height: 50px">
-                        还未注册哦
+                        还未登录哦
                     </c:if>
                 </a>
                 <dl class="layui-nav-child">

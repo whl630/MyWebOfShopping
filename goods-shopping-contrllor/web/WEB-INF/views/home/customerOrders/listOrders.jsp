@@ -8,10 +8,17 @@
     <link href="https://cdn.bootcss.com/amazeui/2.5.1/css/amazeui.css" rel="stylesheet" type="text/css" />
     <link href="/static/home/css/personal.css" rel="stylesheet" type="text/css">
     <link href="/static/home/css/orstyle.css" rel="stylesheet" type="text/css">
+    <style>
+        body{
+            background: url("/static/images/订单界面.jpg") no-repeat center center;
+            background-size:cover;
+            background-attachment: fixed;
+        }
+    </style>
 </head>
 <body>
 <b class="line"></b>
-<div class="center">
+<div class="center" style="opacity: 0.95">
     <div class="col-main">
         <div class="main-wrap">
             <div class="user-order">

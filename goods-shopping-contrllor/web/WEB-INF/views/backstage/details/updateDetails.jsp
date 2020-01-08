@@ -40,7 +40,7 @@
 <body>
     <div id="detailsDiv">
         <h1>商品管理-->商品详情数据添加</h1>
-        <form method="post" action="${root}/back/updateDetails">
+        <form method="post" action="${root}/back/update">
             <div>
                 <span>信息编号：</span><input type="text" name="detailsId" value="${details.detailsId}" readonly="readonly"><br/>
             </div>

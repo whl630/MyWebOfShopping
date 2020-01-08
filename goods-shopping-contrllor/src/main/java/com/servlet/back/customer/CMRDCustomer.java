@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -53,8 +54,14 @@ public class CMRDCustomer {
     }
     //修改提交
     @RequestMapping("/customerUpdate")
-    public String customerUpdate(){
-
-        return "";
+    public ModelAndView customerUpdate(Customer customer){
+        ModelAndView modelAndView = new ModelAndView();
+        int num = customersAndLoginService.updateCustomer(customer);
+            if (num > 0 ){
+                modelAndView.setViewName("redirect:listAllCustomers");
+            }else {
+                modelAndView.setViewName("error/GoodError");
+            }
+        return modelAndView;
     }
 }

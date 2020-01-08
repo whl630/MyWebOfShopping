@@ -24,13 +24,12 @@ public class CMRDGood {
     @Autowired
     private GoodsAndCustomersService goodsAndCustomersService;
     //自定义一个用来上传和下载的前缀路径，用来进行拼接。
-    public static final String FILE_DIRECTORY = "E:\\img";
+    public static final String FILE_DIRECTORY = "C:\\Users\\looki\\IdeaProjects\\Shopping-goods\\goods-shopping-contrllor\\src\\main\\resources\\static\\goodsphotoes";
 
     //在添加的页面上的select标签上遍历商品类型
     @ModelAttribute("type")
     public List<GoodType> getType(){
         ModelAndView modelAndView = new ModelAndView();
-
         List<GoodType> lists = goodsAndCustomersService.getGoodsType();
         return lists;
     }
