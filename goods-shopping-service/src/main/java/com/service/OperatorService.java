@@ -16,4 +16,6 @@ public interface OperatorService {
     List<OperatorType> getAllOperatorTypes();
     //查询一条管理员数据
     Operator getAOperator(int operatorId);
+    //添加管理员(设置该功能，是因为管理员只能是通过内部添加)
+    int insertOperator(Operator operator);
 }

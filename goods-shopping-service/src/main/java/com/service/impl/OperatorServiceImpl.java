@@ -37,4 +37,9 @@ public class OperatorServiceImpl implements OperatorService {
     public Operator getAOperator(int operatorId) {
         return operatorDao.getAOperator(operatorId);
     }
+
+    @Override
+    public int insertOperator(Operator operator) {
+        return operatorDao.insertOperator(operator);
+    }
 }

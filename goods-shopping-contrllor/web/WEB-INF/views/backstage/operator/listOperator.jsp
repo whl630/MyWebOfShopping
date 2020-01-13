@@ -18,7 +18,7 @@
 </head>
 <body>
     <br/>
-    <button type="button" class="layui-btn layui-btn-warm layui-btn-lg" style="margin-left: 560px"><i class="layui-icon"></i></button>
+    <a href="${root}/operator/insertOperator"><button type="button" class="layui-btn layui-btn-warm layui-btn-lg" style="margin-left: 560px"><i class="layui-icon"></i></button></a>
     <br/><br/>
     <div id="operator">
 

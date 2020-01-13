@@ -18,4 +18,9 @@ public class SystemControllerAdvice {
     public String getErrors3(){
         return "error/GoodError3";
     }
+
+//    @ExceptionHandler(RuntimeException.class)
+//    public String getOperatorError(){
+//        return "error/OPeratorRuntimeException";
+//    }
 }
