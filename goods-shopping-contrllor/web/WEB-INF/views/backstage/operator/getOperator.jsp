@@ -32,7 +32,10 @@
                 <td>${operator.operatorTime}</td>
                 <td><img src="/static/images/${operator.operatorPicture}" style="width: 60px;height: 60px"></td>
                 <td>${operator.operatorTypeId}</td>
-                <td><a href="${root}/operator/updateOperator?operatorId=${operator.operatorId}"><button type="button" class="layui-btn layui-btn-warm">调职</button></a></td>
+                <td>
+                    <a href="${root}/operator/updateOperator?operatorId=${operator.operatorId}"><button type="button" class="layui-btn layui-btn-warm">调职</button></a>
+                    <a href="#"><button type="button" class="layui-btn layui-btn-danger layui-btn-radius">撤职</button></a>
+                </td>
             </tr>
         </c:forEach>
     </table>

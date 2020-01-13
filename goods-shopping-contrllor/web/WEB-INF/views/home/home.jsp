@@ -21,36 +21,6 @@
     <link rel="stylesheet" type="text/css" href="/static/css/globle.css">
     <script src="/static/backsageHome/layui.js" charset="utf-8"></script>
     <style>
-        .wrapper {
-            width: 705px;
-            margin: 20px auto;
-            padding: 20px;
-        }
-        h1.title {
-            display: inline-block;
-            background-color: #333;
-            color: #fff;
-            font-size: 20px;
-            font-weight: normal;
-            text-transform: uppercase;
-            padding: 4px 20px;
-            float: left;
-        }
-        .clear {
-            clear: both;
-        }
-        .items {
-            display: block;
-            margin: 20px 0;
-        }
-        .item {
-            background-color: #fff;
-            float: left;
-            margin: 0 10px 10px 0;
-            width: 205px;
-            padding: 10px;
-            height: 290px;
-        }
         .item img {
             display: block;
             margin: auto;
@@ -82,9 +52,9 @@
             float: right;
         }
         #mydiv li a{
-            font-size: 28px;
+            font-size: 27px;
             float: left;
-            margin-left: 110px;
+            margin-left: 105px;
             font-family: 华文新魏;
         }
         #mydiv li a:hover{
@@ -93,7 +63,8 @@
             text-decoration: none;
         }
         #mydiv .listgoods{
-            margin-left: 360px;
+            margin-left: 160px;
+            margin-right: -35px;
         }
 
         body{
@@ -118,6 +89,7 @@
                 <a href="/customerQuit"><button type="button" class="layui-btn layui-btn-lg layui-btn-normal" id="getPhoto">注销</button></a><br/>
             <div id="mydiv">
                 <li><a href="${root}/listGoodsByPage" class="listgoods">商城商品</a></li>
+                <li><a href="${root}/goodsName/killPrice" class="listgoods">促销商品</a></li>
                 <li><a href="#/" class="member">会员中心</a></li>
                 <li><a href="#/">我的管理</a></li>
                 <li><a href="#/" class="help">关于我们</a></li>
@@ -133,6 +105,7 @@
                     <li><a class="active" href="${root}/slign" class="registration">免费注册</a></li>
                     <li><a href="${root}/login" class="login">亲！请登录</a></li>
                     <li><a href="${root}/listGoodsByPage" class="listgoods">商城商品</a></li>
+                <li><a href="${root}/goodsName/killPrice" class="listgoods">促销商品</a></li>
                     <li><a href="#/" class="member">会员中心</a></li>
                     <li><a href="#/">我的管理</a></li>
                     <li><a href="#/" class="help">关于我们</a></li>
@@ -186,13 +159,15 @@
             </div>
         </div>
         <div id="fourDiv">
-            <div class="four_first">
-                <h1 style="margin-left: auto">热门商品</h1>
-            </div>
-            <div class="four_first">
+            <h1>热门商品</h1>
+            <c:forEach items="${}" var="g">
+                <div id="four_first">
+                    <span></span>
 
-            </div>
+                </div>
+            </c:forEach>
         </div>
+
     </div>
     <script type="text/javascript" src='http://demo.lanrenzhijia.com/demo/51/5125/demo/js/jquery-ui.min.js'></script>
     <script src='/static/home/js/jquery.min.js'></script>

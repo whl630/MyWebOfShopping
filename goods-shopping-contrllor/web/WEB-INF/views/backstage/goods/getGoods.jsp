@@ -28,7 +28,7 @@
             <td><img src="static/goodsphotoes/${goods.imgurl}" width="40px" height="40px"></td>
             <td>
                 <a class="del"><i class="fa fa-trash fa-2x" aria-hidden="true" id="delete"></i></a>
-                &nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="${root}/update?goodsId=${goods.goodsId}" class="update"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a>
             </td>
         </tr>

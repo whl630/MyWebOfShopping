@@ -2,6 +2,7 @@ package com.goods;
 
 import javafx.scene.input.DataFormat;
 import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -13,5 +14,6 @@ public class GoodsDetails {
     private String detailsOrigin;//商品产地
     private String detailsDes;//商品描述
     private int goodsId;//商品编号
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date detailsTime;//商品生产日期
 }

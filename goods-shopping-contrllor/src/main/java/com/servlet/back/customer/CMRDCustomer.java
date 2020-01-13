@@ -58,7 +58,7 @@ public class CMRDCustomer {
         ModelAndView modelAndView = new ModelAndView();
         int num = customersAndLoginService.updateCustomer(customer);
             if (num > 0 ){
-                modelAndView.setViewName("redirect:listAllCustomers");
+                modelAndView.setViewName("redirect:getCustomer");
             }else {
                 modelAndView.setViewName("error/GoodError");
             }

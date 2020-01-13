@@ -23,4 +23,10 @@ public class getAllGoodsNameByType {
         return "home/getGoodName/listGoodsNameByType";
     }
 
+
+    //秒杀商品
+    @RequestMapping("/killPrice")
+    public String killPrice(){
+        return "home/homelistGoods/listSomeKillPrice";
+    }
 }

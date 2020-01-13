@@ -101,7 +101,7 @@
         </tr>
     </table>
     <a href="/buy/getAdress"><button type="button" class="layui-btn layui-btn-lg layui-btn-primary layui-btn-radius layui-btn-warm" id="buy">立即购买</button></a>
-    <button type="button" class="layui-btn layui-btn-lg layui-btn-normal" id="add">加入购物车</button>
+    <a href="/shopping/addCart"><button type="button" class="layui-btn layui-btn-lg layui-btn-normal" id="add">加入购物车</button></a>
     <a href="/listGoodsByPage"><button type="button" class="layui-btn">返回</button></a>
     </div>
 
@@ -142,7 +142,6 @@
                     goodsId: $(".detailsId").attr("data-id")
                 }
             }).done(function (res) {
-                alert(res)
                 $("#photo").html(res)
             })
         }

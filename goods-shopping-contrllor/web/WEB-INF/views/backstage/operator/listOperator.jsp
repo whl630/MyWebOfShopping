@@ -17,6 +17,9 @@
     <link rel="stylesheet" type="text/css" href="/static/css/globle.css">
 </head>
 <body>
+    <br/>
+    <button type="button" class="layui-btn layui-btn-warm layui-btn-lg" style="margin-left: 560px"><i class="layui-icon"></i></button>
+    <br/><br/>
     <div id="operator">
 
     </div>

@@ -28,7 +28,6 @@
             <td>
                 <button type="button" class="layui-btn layui-btn-danger layui-btn-radius" id="del">删除</button>
                 &nbsp;&nbsp;&nbsp;&nbsp;
-
                 <a href="${root}/back/updateDetails?detailsId=${details.detailsId}" class="update"><button type="button" class="layui-btn layui-btn-warm layui-btn-radius">修改</button></a>
             </td>
         </tr>
