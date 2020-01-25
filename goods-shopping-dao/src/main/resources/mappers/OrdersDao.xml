@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.orders.OrdersDao">
+    <insert id="addOrder">
+        insert into orders(ordersId, goodsId, account, consignee, orderAdress, num, total, theTime, orderState, customerPhone)
+                values (#{ordersId},#{goodsId},#{Account},#{Consignee},#{orderAdress},#{num},#{total},#{theTime},#{orderState},#{customerPhone})
+    </insert>
+
+    <update id="updateOrder">
+        update orders set orderState = #{orderState} where ordersId = #{ordersId}
+    </update>
+
+    <delete id="delOrder">
+        delete from orders where ordersId = #{ordersId}
+    </delete>
+
+    <select id="getAllOrders" resultType="com.order.Order">
+        select ordersId, goodsId, account, consignee, orderAdress, num, total, theTime, orderState, customerPhone
+                from orders order by ordersId
+    </select>
+
+    <select id="getAOrderByOrderId" resultType="com.order.Order">
+        select ordersId, goodsId, account, consignee, orderAdress, num, total, theTime, orderState, customerPhone
+                from orders where ordersId = #{ordersId}
+    </select>
+
+</mapper>

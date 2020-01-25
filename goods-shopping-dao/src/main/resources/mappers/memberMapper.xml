@@ -3,6 +3,14 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.customer.MemberDao">
+    <insert id="addMember">
+        insert into member(aid, ismember, member_time, expiration_time)
+                values (#{aid},#{ismember},#{memberTime},#{expirationTime})
+    </insert>
+
+    <update id="updateMember">
+        update member set ismember = #{ismember} where aid = #{aid}
+    </update>
 
     <select id="getAllMembers" resultType="com.customer.Member">
         select mid,aid,ismember,member_time,expiration_time from member order by mid

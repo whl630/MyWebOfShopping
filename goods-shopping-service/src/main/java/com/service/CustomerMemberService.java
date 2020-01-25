@@ -1,8 +1,10 @@
-package com.customer;
+package com.service;
+
+import com.customer.Member;
 
 import java.util.List;
 
-public interface MemberDao {
+public interface CustomerMemberService {
     //查询所有会员信息
     List<Member> getAllMembers();
     //修改会员信息

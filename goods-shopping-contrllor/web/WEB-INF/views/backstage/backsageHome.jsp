@@ -66,7 +66,7 @@
                     <a href="javascript:;">用户管理</a>
                     <dl class="layui-nav-child">
                         <dd><a href="/getCustomer" target="box">用户信息管理</a></dd>
-                        <dd><a href="javascript:;" target="box">会员信息管理</a></dd>
+                        <dd><a href="/member/listAllMember" target="box">会员信息管理</a></dd>
                         <dd><a href="/operator/list" target="box">管理员信息管理</a></dd>
                     </dl>
                 </li>

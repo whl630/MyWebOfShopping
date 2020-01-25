@@ -12,6 +12,8 @@ public class Order {
     private String Account;//账号
     private String Consignee;//收件人
     private String orderAdress;//收货地址
+    private String customerPhone;//收货人号码
+    private String orderState;//订单状态
     private int num;//总数量
     private BigDecimal total;//合计
     private Date theTime;//当前时间
