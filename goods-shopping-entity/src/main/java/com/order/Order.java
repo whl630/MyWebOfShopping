@@ -9,8 +9,8 @@ import java.util.Date;
 public class Order {
     private String ordersId;//订单编号
     private int goodsId;//商品编号
-    private String Account;//账号
-    private String Consignee;//收件人
+    private String account;//账号
+    private String consignee;//收件人
     private String orderAdress;//收货地址
     private String customerPhone;//收货人号码
     private String orderState;//订单状态

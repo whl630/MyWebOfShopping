@@ -5,7 +5,7 @@
 <mapper namespace="com.orders.OrdersDao">
     <insert id="addOrder">
         insert into orders(ordersId, goodsId, account, consignee, orderAdress, num, total, theTime, orderState, customerPhone)
-                values (#{ordersId},#{goodsId},#{Account},#{Consignee},#{orderAdress},#{num},#{total},#{theTime},#{orderState},#{customerPhone})
+                values (#{ordersId},#{goodsId},#{account},#{consignee},#{orderAdress},#{num},#{total},#{theTime},#{orderState},#{customerPhone})
     </insert>
 
     <update id="updateOrder">
@@ -24,6 +24,11 @@
     <select id="getAOrderByOrderId" resultType="com.order.Order">
         select ordersId, goodsId, account, consignee, orderAdress, num, total, theTime, orderState, customerPhone
                 from orders where ordersId = #{ordersId}
+    </select>
+
+    <select id="getOrdersByOrderState" resultType="com.order.Order">
+        select ordersId, goodsId, account, consignee, orderAdress, num, total, theTime, orderState, customerPhone
+        from orders where orderState = #{orderState}
     </select>
 
 </mapper>

@@ -16,4 +16,6 @@ public interface OrdersDao {
     int updateOrder(Order order);
     //添加订单
     int addOrder(Order order);
+    //根据订单状态查询订单信息
+    List<Order> getOrdersByOrderState(String orderState);
 }

@@ -37,4 +37,9 @@ public class OrderServiceImpl implements OrderService {
     public int addOrder(Order order) {
         return ordersDao.addOrder(order);
     }
+
+    @Override
+    public List<Order> getOrdersByOrderState(String orderState) {
+        return ordersDao.getOrdersByOrderState(orderState);
+    }
 }

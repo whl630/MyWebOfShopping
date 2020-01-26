@@ -18,7 +18,7 @@
     <tbody id="tbody">
     <c:forEach items="${good.list}" var="goods">
         <tr data-id="${goods.goodsId}">
-            <td><input type="checkbox" id="checkbox"></td>
+            <td><input type="checkbox" id="checkbox" style="width: 25px;height: 25px"></td>
             <td>${goods.goodsId}</td>
             <td>${goods.goodsName}</td>
             <td>${goods.goodsPrice}</td>

@@ -17,7 +17,7 @@
     <tbody id="tbody">
     <c:forEach items="${details.list}" var="details">
         <tr data-id="${details.detailsId}">
-            <td><input type="checkbox" id="checkbox"></td>
+            <td><input type="checkbox" id="checkbox" style="width: 25px;height: 25px"></td>
             <td>${details.detailsId}</td>
             <td>${details.detailsShelf}</td>
             <td>${details.detailsQuintity}</td>

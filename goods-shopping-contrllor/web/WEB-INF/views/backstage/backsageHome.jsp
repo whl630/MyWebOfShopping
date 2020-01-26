@@ -73,10 +73,11 @@
                 <li class="layui-nav-item">
                     <a href="javascript:;">订单管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;" target="box">订单(生成订单)</a></dd>
-                        <dd><a href="javascript:;" target="box">订单(已发货)</a></dd>
-                        <dd><a href="javascript:;" target="box">订单(未签收)</a></dd>
-                        <dd><a href="javascript:;" target="box">订单(已签收)</a></dd>
+                        <dd><a href="/order/listAllOrders" target="box">所有订单</a></dd>
+                        <dd><a href="/order/listOrdersByOrderState1" target="box">订单(生成订单)</a></dd>
+                        <dd><a href="/order/listOrdersByOrderState2" target="box">订单(已发货)</a></dd>
+                        <dd><a href="/order/listOrdersByOrderState3" target="box">订单(未签收)</a></dd>
+                        <dd><a href="/order/listOrdersByOrderState4" target="box">订单(已签收)</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item"><a href="javascript:;">云市场</a></li>
