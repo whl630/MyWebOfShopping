@@ -31,4 +31,9 @@
         from orders where orderState = #{orderState}
     </select>
 
+    <select id="getAllOrder" resultType="com.order.Order">
+        select ordersId, goodsId, account, consignee, orderAdress, num, total, theTime, orderState, customerPhone
+                from orders
+    </select>
+
 </mapper>

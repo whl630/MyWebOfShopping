@@ -18,7 +18,7 @@
     </tr>
     <c:forEach items="${order.list}" var="order">
         <tr>
-            <td><input type="checkbox" style="width: 24px;height: 24px"></td>
+            <td><input type="checkbox" style="width: 24px;height: 24px"  name="ordersId" value="${order.ordersId}"></td>
             <td>${order.ordersId}</td>
             <td><a href="/order/getGoods?goodsId=${order.goodsId}" style="color: red">${order.goodsId}</a></td>
             <td>${order.account}</td>
@@ -40,7 +40,49 @@
             <td>${order.num}</td>
             <td>${order.total}</td>
             <td>${order.theTime}</td>
-            <td><a id="delOrder"><button type="button" class="layui-btn layui-btn-danger"><i class="layui-icon"></i></button></a></td>
+            <td><a class="delOrder" data-id="${order.ordersId}"><button type="button" class="layui-btn layui-btn-danger"><i class="layui-icon"></i></button></a></td>
         </tr>
     </c:forEach>
 </table>
+
+<div id="page">
+    <button value="1" class="my_li" id="id">首页</button>
+    <button value="${order.prePage}" class="my_li">上一页</button>
+    <c:forEach items="${order.navigatepageNums}" var="num">
+        <button value="${num}" class="my_li">${num}</button>
+    </c:forEach>
+    <button value="${order.nextPage}" class="my_li">下一页</button>
+    <button value="${order.pages}" class="my_li">尾页</button><span>&nbsp;&nbsp;共${order.pages}页</span>
+</div>
+
+<script>
+    function loadTables() {
+        $.ajax({
+            method: "GET",
+            url: "${root}/order/getAllOrders",
+            data: {
+                pageNum:$(this).val()
+            }
+        }).done(function (res) {
+            $("#listOrder").html(res);
+        })
+    }
+
+    $(function () {
+        $("#page").on("click",".my_li",loadTables);
+       $(".delOrder").click(function () {
+           if (window.confirm("是否确定删除？")){
+               $.ajax({
+                   method:"GET",
+                   url:"${root}/order/delOrder",
+                   data:{
+                       ordersId:$(this).closest("a").attr("data-id")
+                   }
+               }).done(function (res) {
+                   alert(res)
+                   getAllOrders();
+               })
+           }
+       })
+    })
+</script>

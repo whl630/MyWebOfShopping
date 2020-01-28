@@ -23,7 +23,7 @@
         }
         .good{
             margin: auto;
-            width: 540px;
+            width: 680px;
             height: 380px;
             border: 2px solid darkgreen;
             box-shadow: 1px 12px 8px darkolivegreen;
@@ -35,15 +35,32 @@
             height: 42px;
             border: 1px solid green;
             font-size: 28px;
+            color: red;
         }
         span{
-            margin: 36px;
+            margin-left:  210px;
+        }
+        img{
+            width: 180px;
+            height: 240px;
+          position: fixed;
+            margin-top: 56px;
+            margin-right: 1px;
+            float: left;
+            margin-left: 4px;
+        }
+
+        body{
+            background: url("/static/images/订单界面.jpg") no-repeat center center;
+            background-size:cover;
+            background-attachment: fixed;
         }
     </style>
 </head>
 <body>
     <h1>商品信息</h1>
     <div class="good">
+       <img src="/static/goodsphotoes/${good.imgurl}">
       <span>商品编号：</span> <input type="text" value="${good.goodsId}"><br/>
       <span>商品名称：</span> <input type="text" value="${good.goodsName}"><br/>
       <span>商品价格：</span>  <input type="text" value="￥ ${good.goodsPrice}"><br/>

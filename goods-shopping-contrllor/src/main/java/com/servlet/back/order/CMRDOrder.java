@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @Controller
@@ -43,19 +45,15 @@ public class CMRDOrder {
     }
     //获取一条订单信息
     @RequestMapping("/getAOrder")
-    public Order getAOrder(int ordersId,Model model){
+    public Order getAOrder(String ordersId,Model model){
         Order order = orderService.getAOrderByOrderId(ordersId);
         return order;
     }
-    //修改订单信息
-    @RequestMapping("/updateOrder")
-    public String updateOrder(){
-        return "";
-    }
+
 
     //删除订单信息
     @RequestMapping("/delOrder")
-    public String delOrder(int ordersId){
+    public String delOrder(String ordersId){
         int num = orderService.delOrder(ordersId);
         if (num > 0){
             return "成功";
@@ -64,10 +62,31 @@ public class CMRDOrder {
         }
     }
 
+    //批量删除
+    @RequestMapping("deleteBatch")
+    public String deleteBatch(HttpServletRequest req, HttpServletResponse resp){
+        String[] ids = req.getParameterValues("ordersId");
+        int num = 0;
+        for (String id : ids) {
+            num += orderService.delOrder(id);
+        }
+        if (num == ids.length){
+            return "批量删除成功！";
+        }else {
+            return "批量删除失败！";
+        }
+    }
+
     //添加订单
+    //联合前台由用户将商品添加进购物车乃至付款后操作添加操作
     @RequestMapping("/addOrder")
-    public String addOrder(){
-        return "";
+    public String addOrder(Order order){
+        int num = orderService.addOrder(order);
+        if (num > 0){
+            return "添加成功！";
+        }else {
+            return "添加失败！";
+        }
     }
 
 
@@ -95,7 +114,7 @@ public class CMRDOrder {
 
     //根据订单状态查询相应的订单
     @RequestMapping("/GetOrderByOrderState")
-    public String GetOrderByOrderState(String orderState,Model model){
+    public String GetOrderByOrderState(int orderState,Model model){
         List<Order> orders = orderService.getOrdersByOrderState(orderState);
         model.addAttribute("orders",orders);
         return "backstage/order/getOrdersByOrderState";

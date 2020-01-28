@@ -1,11 +1,6 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: looki
-  Date: 2020/1/26
-  Time: 13:18
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<c:set var="root" scope="page" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
     <title>订单视图</title>
@@ -13,19 +8,26 @@
     <script src="/static/js/jquery.js"></script>
 
     <link rel="stylesheet" type="text/css" href="/static/layui-v2.5.4/layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="/static/backsageHome/layout.css">
     <link rel="stylesheet" type="text/css" href="/static/css/globle.css">
     <script src="/static/backsageHome/layui.js" charset="utf-8"></script>
 
     <style>
-        #listOrder{
+        table{
             margin-top: 12px;
             border: 2px solid gray;
+        }
+
+        body{
+            background: url("/static/images/订单界面.jpg") no-repeat center center;
+            background-size:cover;
+            background-attachment: fixed;
         }
     </style>
 </head>
 <body>
-<button type="button" class="layui-btn layui-btn-danger" style="margin-top: 12px;margin-left: 620px">批量删除</button>
 
+    <a id="delBatchOrder"><button type="button" class="layui-btn layui-btn-danger" style="margin-top: 12px;margin-left: 620px">批量删除</button></a>
     <div id="listOrder">
 
     </div>
@@ -43,6 +45,24 @@
 
         $(function () {
             getAllOrders();
+
+            //批量删除
+            $("#delBatchOrder").click(function () {
+                $checked = $("table :checked");
+                if ($checked.length < 1) {
+                    alert("必须要选择至少一个")
+                } else {
+                    if (window.confirm("是否确定删除？")) {
+                        $.ajax({
+                            method: "GET",
+                            url: "${root}/order/deleteBatch",
+                            data: $checked.serialize()
+                        }).done(function () {
+                            getAllOrders();
+                        })
+                    }
+                }
+            })
         })
     </script>
 </body>

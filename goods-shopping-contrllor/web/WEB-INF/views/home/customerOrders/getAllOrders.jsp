@@ -16,7 +16,7 @@
             <th>交易状态</th>
             <th>交易操作</th>
         </tr>
-        <c:forEach items="${unpaid}" var="order">
+        <c:forEach items="${orders}" var="order">
             <tr>
                 <td>${order.num}</td>
                 <td data-id="${order.goodsId}" class="td">

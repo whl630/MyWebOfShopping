@@ -20,6 +20,12 @@
             margin-top: 12px;
             border: 2px solid gray;
         }
+
+        body{
+            background: url("/static/images/订单界面.jpg") no-repeat center center;
+            background-size:cover;
+            background-attachment: fixed;
+        }
     </style>
 </head>
 <body>

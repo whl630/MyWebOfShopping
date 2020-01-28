@@ -26,4 +26,6 @@ public interface GoodsAndCustomersService {
     List<Good> getSomeGoodsByCategoryId(int categoryId);
     //添加商品类型
     int insertGoodsType(GoodType goodType);
+
+    //通过商品编号查询商品图片等信息
 }

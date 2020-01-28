@@ -38,16 +38,16 @@
             <div class="aui-content-box-list">
                 <ul>
                     <li>
-                        <a href="#">
+                        <a href="/details/getDetails1?goodsId=24">
                             <div class="aui-content-item-img">
-                                <img src="/static/goodsphotoes/西瓜.jpg" alt="">
+                               <img src="/static/goodsphotoes/西瓜.jpg" alt="">
                             </div>
                             <p class="aui-content-item-name">好吃的西瓜 销量有限 先买先优惠</p>
 
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/details/getDetails1?goodsId=29">
                             <div class="aui-content-item-img">
                                 <img src="/static/goodsphotoes/AppleiPhoneXS.jpg" alt="">
                             </div>
@@ -56,7 +56,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/details/getDetails1?goodsId=30">
                             <div class="aui-content-item-img">
                                 <img src="/static/goodsphotoes/iPhoneXR.jpg" alt="">
                             </div>
@@ -65,7 +65,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/details/getDetails1?goodsId=33">
                             <div class="aui-content-item-img">
                                 <img src="/static/goodsphotoes/RedmiK20Pro.jpg" alt="">
                             </div>
@@ -74,7 +74,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/details/getDetails1?goodsId=19">
                             <div class="aui-content-item-img">
                                 <img src="/static/goodsphotoes/葡萄.jpg" alt="">
                             </div>
@@ -83,7 +83,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/details/getDetails1?goodsId=34">
                             <div class="aui-content-item-img">
                                 <img src="/static/goodsphotoes/vivoX27.jpg" alt="">
                             </div>
@@ -91,7 +91,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/details/getDetails1?goodsId=35">
                             <div class="aui-content-item-img">
                                 <img src="/static/goodsphotoes/vivoZ5.jpg" alt="">
                             </div>
@@ -100,7 +100,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/details/getDetails1?goodsId=1">
                             <div class="aui-content-item-img">
                                 <img src="/static/goodsphotoes/荔枝.jpg" alt="">
                             </div>
@@ -109,7 +109,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/details/getDetails1?goodsId=17">
                             <div class="aui-content-item-img">
                                 <img src="/static/goodsphotoes/柠檬.jpg" alt="">
                             </div>

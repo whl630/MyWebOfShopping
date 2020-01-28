@@ -19,12 +19,12 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Order getAOrderByOrderId(int ordersId) {
+    public Order getAOrderByOrderId(String ordersId) {
         return ordersDao.getAOrderByOrderId(ordersId);
     }
 
     @Override
-    public int delOrder(int ordersId) {
+    public int delOrder(String ordersId) {
         return ordersDao.delOrder(ordersId);
     }
 
@@ -39,7 +39,12 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<Order> getOrdersByOrderState(String orderState) {
+    public List<Order> getOrdersByOrderState(int orderState) {
         return ordersDao.getOrdersByOrderState(orderState);
+    }
+
+    @Override
+    public List<Order> getAllOrder() {
+        return ordersDao.getAllOrder();
     }
 }

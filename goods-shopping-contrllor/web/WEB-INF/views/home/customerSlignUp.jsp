@@ -14,8 +14,8 @@
 <header class="htmleaf-header">
     <h1 id="myh1">分步式网上商城用户注册表单</h1>
     <div class="htmleaf-links">
-        <a class="htmleaf-icon icon-htmleaf-home-outline" href="${root}/list" title="返回购物商城主页" target="_blank"><span> 返回购物商城主页</span></a>
-        <a class="htmleaf-icon icon-htmleaf-arrow-forward-outline" href="${root}/login1" title=" 已有账号，去登录 > >" target="_blank"><span> 已有账号，去登录 > ></span></a>
+        <a class="htmleaf-icon icon-htmleaf-home-outline" href="${root}/home" title="返回购物商城主页" target="_blank"><span> 返回购物商城主页</span></a>
+        <a class="htmleaf-icon icon-htmleaf-arrow-forward-outline" href="${root}/login" title=" 已有账号，去登录 > >" target="_blank"><span> 已有账号，去登录 > ></span></a>
     </div>
 </header>
 
