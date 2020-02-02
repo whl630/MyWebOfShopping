@@ -29,7 +29,7 @@ public class shouye {
     //遍历商品到视图
     @RequestMapping("/getGoods")
     public String listGoods(@RequestParam(defaultValue = "1",required = false,name = "pageNum") int pageNum,
-                            @RequestParam(defaultValue = "21",required = false,name = "pageSize") int pageSize,
+                            @RequestParam(defaultValue = "35",required = false,name = "pageSize") int pageSize,
                             Model model){
         List<Good> lists = goodsAndCustomersService.getAllGoods(pageNum,pageSize);
         PageInfo<Good> pageInfo = new PageInfo<>(lists,5);

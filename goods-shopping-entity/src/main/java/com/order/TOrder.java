@@ -1,21 +1,19 @@
 package com.order;
 
-import lombok.Data;
+import com.goods.Good;
 
-import java.math.BigDecimal;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
-@Data
-public class Order {
+public class TOrder {
     private String ordersId;//订单编号
-    private int goodsId;//商品编号
     private String account;//账号
     private String consignee;//收件人
     private String orderAdress;//收货地址
     private String customerPhone;//收货人号码
     private int orderState;//订单状态
-    private int num;//总数量
-    private BigDecimal total;//合计
+    private Map<Good, Integer> orderDetail = new HashMap<>();
     private Date theTime;//当前时间
 
     public String getOrdersId() {
@@ -24,14 +22,6 @@ public class Order {
 
     public void setOrdersId(String ordersId) {
         this.ordersId = ordersId;
-    }
-
-    public int getGoodsId() {
-        return goodsId;
-    }
-
-    public void setGoodsId(int goodsId) {
-        this.goodsId = goodsId;
     }
 
     public String getAccount() {
@@ -66,28 +56,33 @@ public class Order {
         this.customerPhone = customerPhone;
     }
 
-    public Integer getOrderState() {
-        return orderState;
+    public String getOrderState() {
+        switch (this.orderState) {
+            case 0:
+                return "只添加到了购物车";
+            case 1:
+                return "未支付";
+            case 2:
+                return "已支付";
+            case 3:
+                return "已发货";
+            case 4:
+                return "已签收";
+            default:
+                return "出现状况";
+        }
     }
 
     public void setOrderState(int orderState) {
         this.orderState = orderState;
     }
 
-    public int getNum() {
-        return num;
+    public Map<Good, Integer> getOrderDetail() {
+        return orderDetail;
     }
 
-    public void setNum(int num) {
-        this.num = num;
-    }
-
-    public BigDecimal getTotal() {
-        return total;
-    }
-
-    public void setTotal(BigDecimal total) {
-        this.total = total;
+    public void setOrderDetail(Map<Good, Integer> orderDetail) {
+        this.orderDetail = orderDetail;
     }
 
     public Date getTheTime() {

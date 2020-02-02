@@ -3,11 +3,15 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.orders.OrdersDao">
+    
     <insert id="addOrder">
         insert into orders(ordersId, goodsId, account, consignee, orderAdress, num, total, theTime, orderState, customerPhone)
                 values (#{ordersId},#{goodsId},#{account},#{consignee},#{orderAdress},#{num},#{total},#{theTime},#{orderState},#{customerPhone})
     </insert>
 
+    
+    
+    
     <update id="updateOrder">
         update orders set orderState = #{orderState} where ordersId = #{ordersId}
     </update>

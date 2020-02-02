@@ -42,12 +42,6 @@
     </style>
 </head>
     <body>
-
-
-
-
-
-
     <div id="adress">
         <div class="center">
             <div class="col-main">
@@ -61,18 +55,18 @@
                                 </div>
                                 <hr />
                                 <div class="am-u-md-12 am-u-lg-8" style="margin-top: 20px;">
-                                    <form class="am-form am-form-horizontal">
+                                    <form class="am-form am-form-horizontal" method="post" action="/buy/addAdress">
                                         <div class="am-form-group">
                                             <label  class="am-form-label">收货人</label>
                                             <div class="am-form-content">
-                                                <input type="text" id="user-name" placeholder="收货人">
+                                                <input type="text" id="user-name" name="consignee" placeholder="收货人">
                                             </div>
                                         </div>
 
                                         <div class="am-form-group">
                                             <label class="am-form-label">手机号码</label>
                                             <div class="am-form-content">
-                                                <input id="user-phone" placeholder="手机号必填" type="email">
+                                                <input id="user-phone" name="customerPhone" placeholder="手机号必填" type="email">
                                             </div>
                                         </div>
 
@@ -92,7 +86,7 @@
                                         <div class="am-form-group">
                                             <label class="am-form-label">详细地址</label>
                                             <div class="am-form-content">
-                                                <textarea class="" rows="3" id="user-intro" placeholder="输入详细地址"></textarea>
+                                                <textarea class="" rows="3" id="user-intro" name="address" placeholder="输入详细地址"></textarea>
                                                 <small>100字以内写出你的详细地址...</small>
                                             </div>
                                         </div>

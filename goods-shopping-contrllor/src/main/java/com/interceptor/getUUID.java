@@ -8,10 +8,8 @@ import java.util.UUID;
 public class getUUID {
     public static void main(String[] args) {
         //生成订单号
-        for (int i = 0; i < 7; i++) {
             //注意replaceAll前面的是正则表达式
             String uuid = UUID.randomUUID().toString();
             System.out.println(uuid);
-        }
     }
 }

@@ -78,6 +78,7 @@
     hui.tab('.hui-tab');
 </script>
 <script type="text/javascript">
+    //加载所有订单
     function getAllOrders(){
         $.ajax({
             method:"GET",
