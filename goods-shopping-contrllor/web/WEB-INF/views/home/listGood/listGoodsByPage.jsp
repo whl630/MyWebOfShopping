@@ -52,7 +52,7 @@
                         goodsId:-1
                     }
                 }).done(function () {
-                    alert($(this).closest("tr").attr("data-id"))
+                    // alert($(this).closest("tr").attr("data-id"))
                     loadCart();
                 })
         }
@@ -119,6 +119,10 @@
 
     $(function () {
         listGoods();
+        //刷新
+        // $(".car").click(function () {
+        //     window.location.reload()
+        // })
     })
 </script>
 <link href="/static/js/bootstrap.min.css" type="text/css" rel="stylesheet">

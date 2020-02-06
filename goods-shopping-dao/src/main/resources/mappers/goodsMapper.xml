@@ -37,6 +37,9 @@
     <select id="getSomeGoodsByCategoryId" resultType="com.goods.Good">
         select goodsId,goodsName,goodsPrice,disPrice, intotal, categoryId, imgurl from goods where categoryId = #{categoryId}
     </select>
+    <select id="getGoodByName" resultType="com.goods.Good">
+        select goodsId,goodsName,goodsPrice,disPrice, intotal, categoryId, imgurl from goods where goodsName = #{goodsName}
+    </select>
 
     <insert id="addGoodType">
         insert into goodstype(Category) values(#{Category})

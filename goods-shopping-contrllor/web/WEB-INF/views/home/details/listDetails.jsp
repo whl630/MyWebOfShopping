@@ -6,7 +6,7 @@
     // 图片放大特效
     jQuery(function(){
         $('.ph').imagezoomsl({
-            zoomrange: [3, 3]
+            zoomrange: [1, 1]
         });
     });
 </script>

@@ -27,5 +27,7 @@ public interface GoodsAndCustomersService {
     //添加商品类型
     int insertGoodsType(GoodType goodType);
 
+    Good getGoodByName(String goodsName);
+
     //通过商品编号查询商品图片等信息
 }

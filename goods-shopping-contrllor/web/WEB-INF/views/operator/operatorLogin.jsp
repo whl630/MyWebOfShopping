@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
     <style>
         body{
-            background: url("/static/images/管理员登录背景图.jpg") no-repeat center center;
+            background: url("/static/photo/bg.jpg") no-repeat center center;
             background-size:cover;
             background-attachment: fixed;
         }
@@ -30,7 +30,7 @@
                <div class="row">
                    <div class="col-md-offset-4 col-md-4 col-sm-offset-3 col-sm-6">
                        <form class="form-horizontal" method="post" action="/operatorLogin2">
-                           <div class="heading">用户登录</div>
+                           <div class="heading">管理员登录</div>
                            <div class="form-group">
                                <i class="fa-user-secret"></i><input required="" name="operatorAccount" type="text" class="form-control" placeholder="Username" id="exampleInputEmail1">
                            </div>

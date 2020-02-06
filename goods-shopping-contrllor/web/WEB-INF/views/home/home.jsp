@@ -18,6 +18,10 @@
     <script src="static/layui-v2.5.4/layui/layui.js" type="text/javascript"></script>
     <script src="/static/js/jquery.js"></script>
 
+    <link rel="stylesheet" type="text/css" href="/static/home/css/hui.css" />
+    <script type="text/javascript" src="/static/home/css/hui.js"></script>
+    <script src="/static/home/css/hui-tab.js" type="text/javascript"></script>
+
     <link rel="stylesheet" type="text/css" href="/static/css/globle.css">
     <script src="/static/backsageHome/layui.js" charset="utf-8"></script>
     <style>
@@ -118,32 +122,52 @@
             <input type="button" value="搜索" id="searchbutton"/>
         </div>
         <div id="thirdDiv">
-            <div class="layui-tab">
-                <ul class="layui-tab-title">
-                    <li class="layui-this">果蔬</li>
-                    <li>家具电器</li>
-                    <li>手机电脑</li>
-                    <li>食品</li>
-                    <li>生活用品</li>
-                    <li>书籍</li>
-                    <li>饮品</li>
-                    <li>服装</li>
-                    <li>其他</li>
-                </ul>
-                <div class="layui-tab-content">
-                    <div class="layui-tab-item layui-show">
-                        花生
+    <div>
+        <div class="hui-tab">
+            <div class="hui-tab-title">
+                <div class="item_getName" data-id="1">果蔬</div>
+                <div class="item_getName" data-id="2">家具电器</div>
+                <div class="item_getName" data-id="3">手机电脑</div>
+                <div class="item_getName" data-id="4">食品</div>
+                <div class="item_getName" data-id="5">生活用品</div>
+                <div class="item_getName" data-id="6">饮品</div>
+                <div class="item_getName" data-id="7">书籍</div>
+                <div class="item_getName" data-id="8">服装</div>
+                <div class="item_getName" data-id="9">其他</div>
+            </div>
+            <div class="hui-tab-body">
+                <div class="hui-tab-body-items">
+                    <div class="hui-tab-item" id="getName1">
+
                     </div>
-                    <div class="layui-tab-item">内容1</div>
-                    <div class="layui-tab-item">内容2</div>
-                    <div class="layui-tab-item">内容3</div>
-                    <div class="layui-tab-item">内容4</div>
-                    <div class="layui-tab-item">内容5</div>
-                    <div class="layui-tab-item">内容6</div>
-                    <div class="layui-tab-item">内容7</div>
-                    <div class="layui-tab-item">内容8</div>
+                    <div class="hui-tab-item" id="getName2">
+
+                    </div>
+                    <div class="hui-tab-item" id="getName3">
+
+                    </div>
+                    <div class="hui-tab-item" id="getName4">
+
+                    </div>
+                    <div class="hui-tab-item" id="getName5">
+
+                    </div>
+                    <div class="hui-tab-item" id="getName6">
+
+                    </div>
+                    <div class="hui-tab-item" id="getName7">
+
+                    </div>
+                    <div class="hui-tab-item" id="getName8">
+
+                    </div>
+                    <div class="hui-tab-item" id="getName9">
+
+                    </div>
                 </div>
             </div>
+        </div>
+    </div>
         </div>
         <div id="container">
             <div class="sections">
@@ -157,8 +181,8 @@
             </div>
         </div>
         <div id="fourDiv">
-            <h1>热门商品</h1>
-            <c:forEach items="${}" var="g">
+            <h1 style="margin-left: 780px;font-size:32px;color: blueviolet">热门商品</h1>
+            <c:forEach items="" var="g">
                 <div id="four_first">
                     <span></span>
 
@@ -167,6 +191,143 @@
         </div>
 
     </div>
+    <script>
+        $(function () {
+            getNames1()
+            getNames2()
+            getNames3()
+            getNames4()
+            getNames5()
+            getNames6()
+            getNames7()
+            getNames8()
+            getNames9()
+            $(document).on("click","#searchbutton",function () {
+                $.ajax({
+                    method:"GET",
+                    url:"/getGoodByName",
+                    data:{
+                        goodsName:$("#searchtext").val()
+                    }
+                }).done(function () {
+                    var name = $("#searchtext").val();
+                    $(window).attr('location','getGoodByName?goodsName='+name);
+                })
+            })
+        })
+        function getNames1() {
+            var num = 1;
+            $.ajax({
+                method:"GET",
+                url:"/listName",
+                data:{
+                    categoryId:num
+                }
+            }).done(function (res) {
+                $("#getName1").html(res)
+            })
+        }
+        function getNames2() {
+            var num = 2;
+            $.ajax({
+                method:"GET",
+                url:"/listName",
+                data:{
+                    categoryId:num
+                }
+            }).done(function (res) {
+                $("#getName2").html(res)
+            })
+        }
+        function getNames3() {
+            var num = 3;
+            $.ajax({
+                method:"GET",
+                url:"/listName",
+                data:{
+                    categoryId:num
+                }
+            }).done(function (res) {
+                $("#getName3").html(res)
+            })
+        }
+        function getNames4() {
+            var num = 4;
+            $.ajax({
+                method:"GET",
+                url:"/listName",
+                data:{
+                    categoryId:num
+                }
+            }).done(function (res) {
+                $("#getName4").html(res)
+            })
+        }
+        function getNames5() {
+            var num = 5;
+            $.ajax({
+                method:"GET",
+                url:"/listName",
+                data:{
+                    categoryId:num
+                }
+            }).done(function (res) {
+                $("#getName5").html(res)
+            })
+        }
+        function getNames6() {
+            var num = 6;
+            $.ajax({
+                method:"GET",
+                url:"/listName",
+                data:{
+                    categoryId:num
+                }
+            }).done(function (res) {
+                $("#getName6").html(res)
+            })
+        }
+        function getNames7() {
+            var num = 7;
+            $.ajax({
+                method:"GET",
+                url:"/listName",
+                data:{
+                    categoryId:num
+                }
+            }).done(function (res) {
+                $("#getName7").html(res)
+            })
+        }
+        function getNames8() {
+            var num = 8;
+            $.ajax({
+                method:"GET",
+                url:"/listName",
+                data:{
+                    categoryId:num
+                }
+            }).done(function (res) {
+                $("#getName8").html(res)
+            })
+        }
+        function getNames9() {
+            var num = 9;
+            $.ajax({
+                method:"GET",
+                url:"/listName",
+                data:{
+                    categoryId:num
+                }
+            }).done(function (res) {
+                $("#getName9").html(res)
+            })
+        }
+    </script>
+
+    <script type="text/javascript">
+        hui.tab('.hui-tab');
+    </script>
     <script type="text/javascript" src='http://demo.lanrenzhijia.com/demo/51/5125/demo/js/jquery-ui.min.js'></script>
     <script src='/static/home/js/jquery.min.js'></script>
     <script src="/static/home/js/script.js"></script>

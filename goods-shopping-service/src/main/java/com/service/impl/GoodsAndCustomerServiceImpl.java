@@ -62,4 +62,9 @@ public class GoodsAndCustomerServiceImpl implements GoodsAndCustomersService {
     public int insertGoodsType(GoodType goodType) {
         return goodsDao.addGoodType(goodType);
     }
+
+    @Override
+    public Good getGoodByName(String goodsName) {
+        return goodsDao.getGoodByName(goodsName);
+    }
 }

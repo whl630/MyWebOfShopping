@@ -9,10 +9,20 @@
     <link rel="stylesheet" type="text/css" href="/static/layui-v2.5.4/layui/css/layui.css">
     <link rel="stylesheet" type="text/css" href="/static/css/globle.css">
     <script src="/static/backsageHome/layui.js" charset="utf-8"></script>
+    <style>
+        #id{
+            height: 560px;
+        }
+        body{
+            background: url("/static/photo/bg.jpg") no-repeat center center;
+            background-size:cover;
+            background-attachment: fixed;
+        }
+    </style>
 </head>
 <body>
         <div id="id">
-            <h2 align="center">商品管理-->修改商品</h2>
+            <h2 align="center" style="font-family: 华文新魏;font-size: 32px;color: green">商品管理-->修改商品</h2>
             <form enctype="multipart/form-data" action="${root}/updateGood" method="post">
                 <div>
                     商品编号：  <input type="text" name="goodsId" value="${g.goodsId}" readonly="readonly"><br/>
@@ -38,16 +48,14 @@
                              </select>
                 </div>
                 <div class="div1">
-                    商品图片： <input type="file" name="photo" >
-                </div>
-                <div class="div2">
+                    商品图片： <input type="file" name="photo" >&nbsp;&nbsp;&nbsp;&nbsp;
                     <img src="/static/goodsphotoes/${g.imgurl}" width="50px" height="50px">
                 </div>
                 <div>
-                    <input  type="submit" value="修改">
+                    <input  type="submit" value="修改" style="margin-left: 54px;margin-top: 24px">
                 </div>
             </form>
         </div>
-        <a href="/listGood"><button type="button" class="layui-btn layui-btn-normal">返回</button></a>
+        <a href="/listGood" style="margin-left: 1000px"><button type="button" class="layui-btn layui-btn-normal">返回</button></a>
 </body>
 </html>

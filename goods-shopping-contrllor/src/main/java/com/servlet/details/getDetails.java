@@ -19,10 +19,18 @@ public class getDetails {
         model.addAttribute("details",goodsDetails);
         return "home/details/getDetails";
     }
+
     @RequestMapping("/getDetails1")
     public String getDetails1(int goodsId,Model model){
         GoodsDetails goodsDetails = goodsDetailsService.getAGoodsDetailsByGoodsId(goodsId);
         model.addAttribute("details",goodsDetails);
         return "home/details/getDetails1";
+    }
+    //首页通过商品名字导航的视图
+    @RequestMapping("/getDetails2")
+    public String getDetails2(int goodsId,Model model){
+        GoodsDetails goodsDetails = goodsDetailsService.getAGoodsDetailsByGoodsId(goodsId);
+        model.addAttribute("details",goodsDetails);
+        return "home/details/getDetails2";
     }
 }

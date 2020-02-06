@@ -63,16 +63,16 @@
 
 
                 <c:if test="${order.orderState == 1}">
-                    <td><button type="button" class="layui-btn layui-btn-danger">一键支付</button></td>
+                    <td><a href=""><button type="button" class="layui-btn layui-btn-danger">一键支付</button></a></td>
                 </c:if>
                 <c:if test="${order.orderState == 2}">
-                    <td><button type="button" class="layui-btn layui-btn-danger">提醒发货</button></td>
+                    <td><a href=""><button type="button" class="layui-btn layui-btn-danger">提醒发货</button></a></td>
                 </c:if>
                 <c:if test="${order.orderState == 3}">
-                    <td><button type="button" class="layui-btn layui-btn-danger">确认收货</button></td>
+                    <td><a href=""><button type="button" class="layui-btn layui-btn-danger">确认收货</button></a></td>
                 </c:if>
                 <c:if test="${order.orderState == 4}">
-                    <td><button type="button" class="layui-btn layui-btn-danger">商品评价</button></td>
+                    <td><a href="/scoring/goodScoring"><button type="button" class="layui-btn layui-btn-danger">商品评价</button></a></td>
                 </c:if>
             </tr>
         </c:forEach>

@@ -8,8 +8,8 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-    <c:forEach items="${goods}" var="good">
-        <a style="text-decoration: none;font-size: 20px;color: green">&nbsp;&nbsp;${good.goodsName}&nbsp;&nbsp;</a>
+    <c:forEach items="${name}" var="good">
+        <a style="text-decoration: none;font-size: 26px;color: blue" href="/details/getDetails2?goodsId=${good.goodsId}">&nbsp;&nbsp;${good.goodsName}&nbsp;&nbsp;&nbsp;&nbsp;</a>
     </c:forEach>
 
 

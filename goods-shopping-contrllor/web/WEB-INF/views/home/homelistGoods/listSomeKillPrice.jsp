@@ -4,9 +4,20 @@
 <head>
     <link rel="stylesheet" type="text/css" href="/static/home/css/base.css">
     <link rel="stylesheet" type="text/css" href="/static/home/css/home.css">
+
+    <link rel="stylesheet" type="text/css" href="/static/layui-v2.5.4/layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/globle.css">
+    <script src="/static/backsageHome/layui.js" charset="utf-8"></script>
+    <style>
+        body{
+            background: url("/static/photo/bg.jpg") no-repeat center center;
+            background-size:cover;
+            background-attachment: fixed;
+        }
+    </style>
 </head>
 <body>
-<script src="/demos/googlegg.js"></script>
+<h1 style="font-size: 36px;font-family: 华文新魏;color: blue;margin-left: 750px;margin-top: 36px">促销商品</h1>
 <div style="height:100px;"></div>
 <div class="aui-content-max">
     <div class="aui-sale-time">
@@ -148,6 +159,7 @@
     </div>
 </div>
 
+<a href="/home" style="margin-left:1500px;"><button type="button" class="layui-btn">返回</button></a>
 
 <script type="text/javascript" src="/static/home/js/jquery.min.js"></script>
 <script type="text/javascript" src="/static/home/js/banner.js"></script>

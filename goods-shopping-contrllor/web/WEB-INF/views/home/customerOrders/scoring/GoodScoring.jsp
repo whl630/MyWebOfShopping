@@ -3,6 +3,13 @@
 <head>
     <title>商品评分</title>
     <link type="text/css" href="/static/js/style.css" rel="stylesheet" />
+    <style>
+        body{
+            background: url("/static/images/订单界面.jpg") no-repeat center center;
+            background-size:cover;
+            background-attachment: fixed;
+        }
+    </style>
 </head>
 <body>
 <div class="order-evaluation clearfix">
@@ -42,8 +49,8 @@
     </div>
 
     <a href="javascript:;" id="order_evaluation">评价完成</a>
-    <a href="javascript:;" id="order_getBack" style="margin-right: 16px;">返回</a>
-    <a href="javascript:;" id="order_commentary" style="margin-right: 16px;">前往评论</a>
+    <a href="/order/listOrders" id="order_getBack" style="margin-right: 16px;">返回</a>
+    <a href="/commentary/goodsCommentary" id="order_commentary" style="margin-right: 16px;">前往评论</a>
 </div>
 
 <div id="order_evaluate_modal" class="dmlei_tishi_info"></div>

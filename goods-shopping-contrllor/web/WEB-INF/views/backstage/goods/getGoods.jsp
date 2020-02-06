@@ -83,9 +83,9 @@
             },
             success:function (data) {
                 alert("正在查询！");
-                var str = "";
+                var str = "<table class='table table-condensed table-striped table-bordered table-hover'>";
                 data.forEach(function(i){
-                    str += "<tr data-id='"+i.goodsId+"'><td>"+"<input type='checkbox' id='checkbox'>"
+                    str += "<tr data-id='"+i.goodsId+"'><td>"+"<input type='checkbox' id='checkbox' style='width: 25px;height: 25px'>"
                         +"</td><td>"+i.goodsId
                         +"</td><td>"+i.goodsName
                         +"</td><td>"+i.goodsPrice
@@ -94,10 +94,11 @@
                         +"</td><td>"+i.categoryId
                         +"</td><td>"+"<img src='static/goodsphotoes/"
                         +i.imgurl+" 'width='40px' height='40px'> "
-                        +"</td><td>"+"<a class='del'><i class='fa fa-trash fa-2x' aria-hidden='true' id='delete'></i></a>"
+                        +"</td><td>"+"<a class='del'><i class='fa fa-trash fa-2x' aria-hidden='true' id='delete'></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
                         +"<a href='${root}/update?goodsId="+i.goodsId+"'class='update'><i class='fa fa-pencil-square-o fa-2x' aria-hidden='true'></i></a>"
                         +"</td></tr>";
                 })
+                str += "</table>"
                 $("#listDiv").html(str);
             }
         });
