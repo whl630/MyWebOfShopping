@@ -61,7 +61,7 @@ public class GoodDetailsController {
         ModelAndView modelAndView = new ModelAndView();
         int number = goodsDetailsService.updtaeGoodDetails(goodsDetails);
         if (number > 0){
-            modelAndView.setViewName("redirect:getAllGoodsDetails");
+            modelAndView.setViewName("redirect:listgooddetails");
         }else {
             modelAndView.setViewName("error/GoodError");
         }

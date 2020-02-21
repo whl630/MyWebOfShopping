@@ -25,7 +25,7 @@
 <body>
 <header class="hui-header">
     <div id="hui-back"></div>
-    <h1>网上商城————订单界面</h1>
+    <h1 style="font-size: 28px">网上商城————订单界面</h1>
 </header>
 <div class="hui-wrap">
     <div class="hui-common-title" style="margin-top:15px;">
@@ -74,6 +74,7 @@
         </div>
     </div>
 </div>
+<a href="/home"><button type="button" class="layui-btn layui-btn-danger">返回</button></a>
 <script  type="text/javascript">
     hui.tab('.hui-tab');
 </script>
