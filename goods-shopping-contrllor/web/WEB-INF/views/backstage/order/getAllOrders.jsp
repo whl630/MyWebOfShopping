@@ -79,8 +79,11 @@
                        ordersId:$(this).closest("a").attr("data-id")
                    }
                }).done(function (res) {
-                   alert(res)
-                   getAllOrders();
+                   if(res === "成功") {
+                       window.location.href = "${root}/getAllOrders";
+                   } else {
+                       window.location.href = "${root}/getAllOrders";
+                   }
                })
            }
        })

@@ -10,6 +10,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -57,6 +58,7 @@ public class CMRDGood {
 
     //删除操作
     @RequestMapping("/deleteGood")
+    @ResponseBody
     public String deleteGood(int goodsId){
         int num = goodsAndCustomersService.deleteGood(goodsId);
         if (num > 0){

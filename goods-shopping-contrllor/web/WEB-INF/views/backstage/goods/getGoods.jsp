@@ -67,8 +67,13 @@
                     goodsId:$(this).closest("tr").attr("data-id")
                 }
             }).done(function (res) {
-                alert(res)
-                loadTables();
+                if(res === "成功") {
+                    window.location.href = "/listGood";
+                } else {
+                    window.location.href = "/listGood";
+                }
+            }).fail(function () {
+                alert("删除失败！")
             })
         }
     }

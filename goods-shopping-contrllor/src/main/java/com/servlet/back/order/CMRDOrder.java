@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -53,6 +54,7 @@ public class CMRDOrder {
 
     //删除订单信息
     @RequestMapping("/delOrder")
+    @ResponseBody
     public String delOrder(String ordersId){
         int num = orderService.delOrder(ordersId);
         if (num > 0){
@@ -64,6 +66,7 @@ public class CMRDOrder {
 
     //批量删除
     @RequestMapping("deleteBatch")
+    @ResponseBody
     public String deleteBatch(HttpServletRequest req, HttpServletResponse resp){
         String[] ids = req.getParameterValues("ordersId");
         int num = 0;
@@ -80,6 +83,7 @@ public class CMRDOrder {
     //添加订单
     //联合前台由用户将商品添加进购物车乃至付款后操作添加操作
     @RequestMapping("/addOrder")
+    @ResponseBody
     public String addOrder(Order order){
         int num = orderService.addOrder(order);
         if (num > 0){

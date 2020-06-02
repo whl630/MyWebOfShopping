@@ -62,7 +62,6 @@ public class CMRDOperator {
             return "backstage/operator/updateOperator";
         }
     }
-
     //进入添加管理员视图
     @RequestMapping("/insertOperator")
     public ModelAndView insertOperator(){
@@ -70,7 +69,6 @@ public class CMRDOperator {
         modelAndView.setViewName("backstage/operator/insertOperator");
         return modelAndView;
     }
-
     //添加管理员
     @RequestMapping("/operatorAdd")
     public String addOperator(@Valid Operator operator, BindingResult bindingResult,MultipartFile picture){
