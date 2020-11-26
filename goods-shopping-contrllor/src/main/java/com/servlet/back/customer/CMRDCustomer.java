@@ -44,7 +44,6 @@ public class CMRDCustomer {
             return "失败";
         }
     }
-
     //进入顾客修改界面
     @RequestMapping("/getCustomerUpdate")
     public String getCustomerUpdate(int aid,Model model){

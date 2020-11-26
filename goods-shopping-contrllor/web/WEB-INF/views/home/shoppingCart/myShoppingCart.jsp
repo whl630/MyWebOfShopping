@@ -62,6 +62,7 @@
                 }
             }).done(function () {
                 alert($(this).closest("tr").attr("data-id"))
+                window.location.reload();
                 loadCart();
             })
     }
@@ -74,6 +75,7 @@
             }
         }).done(function () {
             alert($(this).closest("tr").attr("data-id"))
+            window.location.reload();
             loadCart();
         })
     }

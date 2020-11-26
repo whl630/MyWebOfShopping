@@ -8,9 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
@@ -40,7 +38,8 @@ public class GoodDetailsController {
     }
     //删除操作
     @RequestMapping("/deleteGoodDetails")
-    public String deleteGoodDetails(int detailsId){
+    @ResponseBody
+    public String deleteGoodDetails(@RequestBody int detailsId){
         int num = goodsDetailsService.deleteGoodDetails(detailsId);
         if (num > 0){
             return "删除成功!";

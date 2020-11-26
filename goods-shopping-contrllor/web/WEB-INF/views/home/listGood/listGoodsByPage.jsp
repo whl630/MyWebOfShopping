@@ -119,9 +119,13 @@
 
     $(function () {
         listGoods();
-        //刷新
+        // 刷新
         // $(".car").click(function () {
         //     window.location.reload()
+        // })
+
+        // $(".shopping-cart").click(function () {
+        //     window.location.reload();
         // })
     })
 </script>

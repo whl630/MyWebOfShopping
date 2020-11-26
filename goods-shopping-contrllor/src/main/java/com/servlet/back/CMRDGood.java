@@ -49,13 +49,11 @@ public class CMRDGood {
         return "redirect:/listGood";
 
     }
-
     //添加商品(通过超链接跳转到添加页面)
     @RequestMapping("/insert")
     public String insert(){
         return "backstage/goods/insertGoods";
     }
-
     //删除操作
     @RequestMapping("/deleteGood")
     @ResponseBody
@@ -67,7 +65,6 @@ public class CMRDGood {
             return "失败";
         }
     }
-
     //修改商品信息(通过超链接跳转到修改页面),同时将要修改的数据渲染到网页上
     @RequestMapping("/update")
     public String update(int goodsId, Model model){
@@ -75,8 +72,6 @@ public class CMRDGood {
         model.addAttribute("g",good);
         return "backstage/goods/updateGood";
     }
-
-
     //修改,并且商品编号设为只读
     @PostMapping("/updateGood")
     public ModelAndView updateGood(@Valid Good good, BindingResult bindingResult, MultipartFile photo){

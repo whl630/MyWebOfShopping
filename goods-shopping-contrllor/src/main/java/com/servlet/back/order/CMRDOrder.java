@@ -50,8 +50,6 @@ public class CMRDOrder {
         Order order = orderService.getAOrderByOrderId(ordersId);
         return order;
     }
-
-
     //删除订单信息
     @RequestMapping("/delOrder")
     @ResponseBody
@@ -63,7 +61,6 @@ public class CMRDOrder {
             return "失败";
         }
     }
-
     //批量删除
     @RequestMapping("deleteBatch")
     @ResponseBody

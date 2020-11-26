@@ -116,8 +116,7 @@
                     goodsId: $(this).closest("tr").attr("data-id")
                 }
             }).done(function () {
-                alert("添加成功")
-                loadCart();
+                window.location.reload();
             })
             event.preventDefault();
         });
